@@ -1,0 +1,36 @@
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: #4b64b4;
+    padding: 2.15vw 0;
+  }
+  
+  .slider-wrapper {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    width: max-content; /* Adjust to ensure full width of the sliding content */
+    animation: slideAnimation 70s linear infinite;
+  }
+  
+  .slide {
+    flex-shrink: 0;
+  }
+  
+  img {
+    display: block;
+    width: 13vw;
+    object-fit: cover;
+    height: 2.8vw;
+  }
+  
+  @keyframes slideAnimation {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-100% + 20px));
+    }
+  }
+  

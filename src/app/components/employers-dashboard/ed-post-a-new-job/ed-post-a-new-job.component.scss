@@ -1,0 +1,246 @@
+// Breadcrumb Title
+.breadcrumb-title {
+    margin-bottom: 2vw;
+    
+    h1 {
+        font-size: 1.7vw;
+        font-family: "mon-bold";
+        color: black;
+    }
+}
+
+// Card
+.jove-card {
+    background-color: var(--whiteColor);
+    margin-bottom: 2vw;
+    border-radius: 1vw;
+    padding: 2.5vw;
+
+    .title {
+        font-size: 1.2vw;
+        font-family: 'mon-bold';
+        color: black;
+        margin-bottom: 2vw;
+        border-bottom: 0.1vw solid var(--borderColor);
+        padding: {
+            left: 2.5vw;
+            right: 2.5vw;
+            bottom: 0.85vw;
+        };
+        margin: {
+            left: -2.5vw;
+            right: -2.5vw;
+        };
+    }
+    form {
+        .form-group {
+            margin-bottom: 2vw;
+
+            label {
+                display: block;
+                margin-bottom: 0.5vw;
+                color: black;
+                font-size: 1vw !important;
+                font-family: 'mon-semi' !important;
+            }
+            .form-control {
+                height: 3.3vw;
+                padding: 0.8vw 1vw;
+                border-radius: 0.3vw;
+                font-size: 1vw;
+                font-family: 'mon-reg';
+                color: var(--headingColor);
+                border: 0.1vw solid #e0e6e9;
+                background-color: #f9fafb;
+                transition: var(--transition);
+
+                &::placeholder {
+                    color: var(--bodyColor);
+                }
+                &:focus {
+                    border-color: var(--primaryColor);
+                }
+            }
+            .form-select {
+                height: 3.3vw;
+                cursor: pointer;
+                padding: 0.8vw 1vw;
+                border-radius: 0.3vw;
+                font-size: var(--fontSize);
+                color: var(--headingColor);
+                border: 0.1vw solid #e0e6e9;
+                transition: var(--transition);
+                background: {
+                    color: #f9fafb;
+                    position: right 1.5vw center;
+                };
+                &:focus {
+                    border-color: var(--primaryColor);
+                }
+            }
+            textarea.form-control {
+                height: auto;
+                padding-top: 1.5vw;
+            }
+            &.upload-photo {
+                padding-bottom: 2vw;
+                border-bottom: 0.1vw solid var(--borderColor);
+
+                input[type="file" i] {
+                    margin-top: 0.3vw;
+                }
+                p {
+                    line-height: initial;
+                    margin-top: 0.85vw;
+                    font: {
+                        size: 14px;
+                        style: italic;
+                    };
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    // Breadcrumb Title
+    .breadcrumb-title {
+        h1 {
+            font-size: 20px;
+        }
+    }
+
+    // Card
+    .jove-card {
+        border-radius: 5px;
+        padding: 20px 15px;
+    
+        .title {
+            font-size: 16px;
+            margin-bottom: 15px;
+            padding: {
+                left: 15px;
+                right: 15px;
+                bottom: 10px;
+            };
+            margin: {
+                left: -15px;
+                right: -15px;
+            };
+        }
+        form {
+            .form-group {
+                margin-bottom: 15px;
+    
+                label {
+                    margin-bottom: 7px;
+                }
+                .form-control {
+                    height: 48px;
+                    font-size: 15px;
+                    padding: 10px 15px;
+                }
+                .form-select {
+                    height: 48px;
+                    font-size: 15px;
+                    padding: 10px 15px;
+                    background: {
+                        position: right 20px center;
+                    };
+                }
+                textarea.form-control {
+                    padding-top: 15px;
+                }
+                &.upload-photo {
+                    padding-bottom: 15px;
+    
+                    p {
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    // Breadcrumb Title
+    .breadcrumb-title {
+        h1 {
+            font-size: 22px;
+        }
+    }
+
+    // Card
+    .jove-card {
+        border-radius: 10px;
+        padding: 25px;
+    
+        .title {
+            font-size: 18px;
+            padding: {
+                left: 25px;
+                right: 25px;
+                bottom: 12px;
+            };
+            margin: {
+                left: -25px;
+                right: -25px;
+            };
+        }
+        form {
+            .form-group {
+                .form-control {
+                    padding: 10px 18px;
+                    font-size: 15px;
+                }
+                .form-select {
+                    padding: 10px 18px;
+                    font-size: 15px;
+                    background: {
+                        position: right 18px center;
+                    };
+                }
+                textarea.form-control {
+                    padding-top: 18px;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+    // Card
+    .jove-card {
+        padding: 25px;
+    
+        .title {
+            padding: {
+                left: 25px;
+                right: 25px;
+            };
+            margin: {
+                left: -25px;
+                right: -25px;
+            };
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

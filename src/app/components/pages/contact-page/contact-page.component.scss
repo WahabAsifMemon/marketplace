@@ -1,0 +1,313 @@
+.contact-form {
+    margin-top: 3.25vw;
+
+    form {
+        .form-group {
+            margin-bottom: 28px;
+
+            label {
+                display: block;
+                margin-bottom: 8px;
+            }
+
+            .form-control {
+                height: 57px;
+                padding: 10px 20px;
+                border-radius: 5px;
+                font-size: var(--fontSize);
+                color: var(--headingColor);
+                border: 1px solid #e0e6e9;
+                background-color: #f3f4f6;
+                box-shadow: unset !important;
+                transition: var(--transition);
+
+                &::placeholder {
+                    color: var(--bodyColor);
+                    transition: var(--transition);
+                }
+
+                &:focus {
+                    border-color: var(--primaryColor);
+
+                    &::placeholder {
+                        color: transparent;
+                    }
+                }
+            }
+
+            textarea.form-control {
+                height: auto;
+                padding-top: 20px;
+            }
+        }
+    }
+}
+
+.contact-info {
+    border-radius: 10px;
+    padding: 4.9vw 0 4.9vw 3.2vw;
+
+    h3 {
+        font-size: 1.3vw;
+        margin-bottom: 20px;
+        font-family: 'mon-bold';
+        color: black;
+    }
+
+    .info {
+        margin-bottom: 30px;
+
+        li {
+            margin-bottom: 18px;
+            color: var(--bodyColor);
+            margin-left: 5px;
+
+            .icon-content{
+                margin-left: 2.5%;
+            }
+
+            span {
+                margin-bottom: 2px;
+                color: var(--primaryColor);
+                font-size: 1.04vw;
+                font-family: 'mon-med';
+            }
+
+            a {
+                font-size: 0.97vw;
+                font-family: "mon-med";
+
+                color: #66707F;
+                text-decoration: 1px #66707F underline;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .socials-link {
+        li {
+            margin-bottom: 12px;
+
+            a {
+                font-size: 0.95vw;
+                color: var(--bodyColor);
+                font-family: 'mon-med';
+                color: #66707F;
+
+                span {
+                    width: 35px;
+                    height: 35px;
+                    line-height: 33px;
+                    text-align: center;
+                    border-radius: 50%;
+                    margin-right: 13px;
+                    color: var(--whiteColor);
+                    transition: var(--transition);
+                }
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+h1 {
+    font-size: 1.7vw;
+    font-family: 'mon-bold';
+    color: var(--black);
+    padding-left: 7%;
+}
+
+h2 {
+    font-size: 1.64vw;
+    font-family: "mon-bold";
+    color: black;
+}
+
+.container-width {
+    width: 85%;
+    margin: auto;
+}
+
+.contact-area {
+    padding: 7.6vw 0vw 1.6vw;
+}
+
+.content-width {
+    width: 90.5%;
+    margin: auto;
+}
+
+.default-btn {
+    padding: 0.95vw 2.2vw;
+    background-color: var(--pinkColor);
+    color: var(--whiteColor);
+    border: 0;
+    border-radius: 7px;
+    font-size: 1.3vw;
+    font-family: 'mon-bold';
+    transition: all ease 0.5s;
+
+    &:hover {
+        background-color: transparent;
+        color: var(--pinkColor);
+        border: 3px solid var(--pinkColor);
+    }
+}
+
+.contact-info-link img {
+    height: 1.55vw;
+    object-fit: cover;
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .contact-form {
+        form {
+            .form-group {
+                margin-bottom: 15px;
+
+                label {
+                    margin-bottom: 7px;
+                }
+
+                .form-control {
+                    height: 48px;
+                    font-size: 14px;
+                    padding: 10px 12px;
+                }
+
+                textarea.form-control {
+                    height: auto;
+                    padding-top: 12px;
+                }
+            }
+        }
+    }
+
+    .contact-info {
+        border-radius: 5px;
+        padding: 20px;
+
+        margin: {
+            left: 0;
+            top: 25px;
+        }
+
+        ;
+
+        h3 {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .info {
+            margin-bottom: 20px;
+
+            li {
+                padding-left: 30px;
+                margin-bottom: 15px;
+
+                i {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .contact-form {
+        form {
+            .form-group {
+                .form-control {
+                    height: 50px;
+                    font-size: 15px;
+
+                    padding: {
+                        left: 15px;
+                        right: 15px;
+                    }
+
+                    ;
+                }
+
+                textarea.form-control {
+                    height: auto;
+                    padding-top: 15px;
+                }
+            }
+        }
+    }
+
+    .contact-info {
+        padding: 25px;
+
+        margin: {
+            left: 0;
+            top: 25px;
+        }
+
+        ;
+
+        h3 {
+            margin-bottom: 18px;
+        }
+
+        .info {
+            margin-bottom: 25px;
+
+            li {
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+    .contact-form {
+        form {
+            .form-group {
+                .form-control {
+                    height: 52px;
+                }
+            }
+        }
+    }
+
+    .contact-info {
+        margin-left: 0;
+        padding: 25px;
+
+        h3 {
+            margin-bottom: 18px;
+        }
+
+        .info {
+            margin-bottom: 25px;
+
+            li {
+                margin-bottom: 12px;
+            }
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

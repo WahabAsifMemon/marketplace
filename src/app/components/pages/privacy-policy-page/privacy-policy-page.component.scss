@@ -1,0 +1,95 @@
+.privacy-policy-content {
+    p {
+        font-size: 1.07vw;
+        line-height: 30px;
+        font-family: "mon-med";
+        margin-bottom: 0 !important;
+
+        a {
+            color: var(--primaryColor);
+            text-decoration: underline;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    ul,
+    ol {
+        li {
+            color: var(--bodyColor);
+            margin-bottom: 12px;
+
+            a {
+                color: var(--primaryColor);
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            strong {
+                font-weight: 600;
+                color: var(--headingColor);
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+h1 {
+    font-size: 1.7vw;
+    font-family: 'mon-bold';
+    color: var(--black);
+    padding-left: 7%;
+}
+
+h4 {
+    font-size: 1.37vw;
+    font-family: "mon-bold";
+    margin-top: 2.3vw;
+    margin-bottom: 0.9vw;
+}
+
+.container-width {
+    width: 85%;
+    margin: auto;
+}
+
+.list-unstyled {
+    float: inline-end;
+}
+
+.list-unstyled span {
+    padding: 0 0.5vw;
+    font-size: 2vw;
+    color: gray;
+}
+
+.list-unstyled li {
+    font-family: "reg";
+    font-size: 1.2vw;
+    color: var(--black);
+}
+
+.link a {
+    font-size: 1.1vw;
+    font-family: 'mon-bold';
+}
+
+.content-width {
+    width: 88%;
+    margin: auto;
+}
+
+.privacy-policy-area {
+    padding: 6.8vw 0 3.5vw;
+}
+
+.privacy-policy-content .first {
+    padding-bottom: 2vw;
+}

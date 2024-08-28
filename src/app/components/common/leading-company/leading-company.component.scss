@@ -1,0 +1,226 @@
+h2{
+    font-size: 1.3vw;
+    font-family: "mon-med";
+    color: var(--whiteColor);
+    margin-bottom: 1.1vw;
+}
+
+.leading-company-area{
+    padding-bottom: 7vw;
+}
+
+.leading-company-content {
+    position: relative;
+    z-index: 1;
+
+    .box {
+        background-color: var(--tabColor);
+        border-radius: 1vw;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        padding: 2.68vw 3.3vw 1vw;
+
+        .features-list {
+            margin-top: -7px;
+
+            span {
+                color: var(--whiteColor);
+                padding-left: 27px;
+                margin-top: 15px;
+
+                i {
+                    top: 50%;
+                    left: -3px;
+                    font-size: 22px;
+                    position: absolute;
+                    color: var(--primaryColor);
+                    transform: translateY(-50%);
+                }
+            }
+        }
+    }
+
+    .content {
+        padding-left: 6vw;
+        margin-top: 2.8vw;
+
+        p {
+            font-size: 1.37vw;
+            font-family: 'mon-reg';
+            color: black;
+            padding-right: 2vw;
+        }
+    }
+}
+
+.container-width {
+    padding: 0 6vw;
+}
+
+.left {
+    width: 51.7%;
+    padding-top: 11vw;
+}
+
+.right {
+    width: 48.3%;
+    margin-top: 6.4vw;
+}
+
+.about-profile img {
+    width: 100%;
+    height: 56vw;
+    border-radius: 1vw;
+    object-fit: cover;
+}
+
+.box p {
+    font-family: "mon-reg";
+    font-size: 1.37vw;
+    color: var(--whiteColor);
+    line-height: 2vw;
+}
+
+.features-list span {
+    font-size: 1.25vw;
+    font-family: "mon-reg";
+}
+
+.leftlist {
+    width: 59%;
+}
+
+.rightlist {
+    width: 41%;
+}
+
+.leftlist ul li,
+.rightlist ul li {
+    text-decoration: none;
+    list-style: none;
+    color: var(--whiteColor);
+    font-size: 1.25vw;
+    font-family: 'mon-reg';
+    line-height: 2.51vw;
+}
+
+.leftlist ul,
+.rightlist ul {
+    padding: 0 !important;
+}
+
+.leftlist ul li i,
+.rightlist ul li i {
+    color: var(--pinkColor);
+    margin-right: 0.5vw;
+}
+
+
+.content h2 {
+    color: black;
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .leading-company-content {
+        margin-bottom: 25px;
+
+        .box {
+            margin-right: 0;
+            border-radius: 5px;
+            padding: 30px 20px;
+
+            h2 {
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+
+            .features-list {
+                margin-top: -10px;
+
+                span {
+                    padding-left: 23px;
+                    margin-top: 12px;
+
+                    i {
+                        left: -2px;
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+
+        .content {
+            padding-left: 0;
+            margin-top: 25px;
+
+            h2 {
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .leading-company-image {
+        border-radius: 5px;
+
+        img {
+            border-radius: 5px;
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .leading-company-content {
+        margin-bottom: 25px;
+
+        .box {
+            margin-right: 0;
+            padding: 35px 30px;
+            border-radius: 10px;
+
+            h2 {
+                font-size: 22px;
+                margin-bottom: 12px;
+            }
+
+            .features-list {
+                margin-top: -7px;
+
+                span {
+                    padding-left: 24px;
+                    margin-top: 12px;
+
+                    i {
+                        left: -2px;
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+
+        .content {
+            padding-left: 0;
+            margin-top: 25px;
+
+            h2 {
+                font-size: 22px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .leading-company-image {
+        border-radius: 10px;
+
+        img {
+            border-radius: 10px;
+        }
+    }
+
+}
+

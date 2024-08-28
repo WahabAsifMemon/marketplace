@@ -1,0 +1,221 @@
+.main{
+    width: 100%;
+    padding-top: 7vw;
+    padding-bottom: 3.5vw;
+}
+
+.sec-title{
+    text-align: center;
+    margin-bottom: 2vw;
+}
+
+.sec-title h2{
+    font-size: 1.5vw;
+    font-family: 'mon-bold';
+    color: black;
+}
+
+.card-width{
+    width: 90%;
+    margin: auto;
+}
+
+.how-jove-works-area {
+    .row {
+        .col {
+            flex: 0 0 auto;
+            width: 20%;
+
+            &:last-child {
+                .box {
+                    &::before {
+                        display: none;
+                    }
+                }
+            }
+            &:nth-child(2), &:nth-child(4) {
+                .box {
+                    &::before {
+                        transform: scaleY(-1);
+                    }
+                }
+            }
+        }
+    }
+    &.bg-color {
+        background-color: #325343;
+
+        .box {
+            .icon {
+                background-color: #3a7157;
+                border: none;
+            }
+            .number {
+                color: var(--whiteColor);
+                background-color: #3a4e90;
+            }
+            h3 {
+                color: var(--whiteColor);
+            }
+            &::before {
+                background: {
+                    image: url(../../../../assets/images/icons/right-arrow-2.png);
+                };
+            }
+            &:hover {
+                .icon {
+                    background-color: #3a4e90;
+                }
+            }
+        }
+    }
+}
+.box {
+    margin-bottom: 25px;
+
+    .icon {
+        width: 10.5vw;
+        height: 10.5vw;
+        line-height: 10.5vw;
+        border-radius: 50%;
+        transition: var(--transition);
+        background-color: var(--whiteColor);
+        border: 1px solid var(--borderColor);
+        margin: {
+            left: auto;
+            right: auto;
+        };
+    }
+    .number {
+        width: 3.3vw;
+        height: 3.3vw;
+        margin-top: -1.7vw;
+        line-height: 3.5vw;
+        border-radius: 50%;
+        color: var(--whiteColor);
+        background-color: #3a4e90;
+        margin: {
+            left: auto;
+            right: auto;
+        };
+    }
+    h3 {
+        font-size: 1.25vw;
+        margin-top: 20px;
+        font-family: 'mon-reg';
+        color: black;
+    }
+    &::before {
+        top: 5vw;
+        content: "";
+        width: 6vw;
+        height: 0.95vw;
+        right: -3vw;
+        position: absolute;
+        background: {
+            image: url(../../../../assets/images/Arrow.png);
+            position: center center;
+            repeat: no-repeat;
+            size: cover;
+        };
+    }
+
+    &:hover {
+        .icon {
+            border-color: #3a4e90;
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .how-jove-works-area {
+        .row {
+            .col {
+                width: 50%;
+            }
+        }
+    }
+    .box {
+        .icon {
+            width: 120px;
+            height: 120px;
+            line-height: 105px;
+        }
+        .number {
+            width: 40px;
+            height: 40px;
+            margin-top: -20px;
+            line-height: 40px;
+        }
+        h3 {
+            font-size: 16px;
+            margin-top: 15px;
+        }
+        &::before {
+            display: none;
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    .how-jove-works-area {
+        .row {
+            .col {
+                width: 33.3333333333%;
+            }
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .box {
+        .icon {
+            width: 120px;
+            height: 120px;
+            line-height: 110px;
+        }
+        .number {
+            width: 40px;
+            height: 40px;
+            margin-top: -20px;
+            line-height: 40px;
+        }
+        h3 {
+            margin-top: 15px;
+        }
+        &::before {
+            display: none;
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+// @media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+//     .box {
+//         .icon {
+//             width: 140px;
+//             height: 140px;
+//             line-height: 130px;
+//         }
+//         .number {
+//             margin-top: -20px;
+//         }
+//         h3 {
+//             margin-top: 18px;
+//         }
+//         &::before {
+//             display: none;
+//         }
+//     }
+
+// }

@@ -1,0 +1,434 @@
+<app-navbar></app-navbar>
+
+<!-- Page Banner -->
+<app-page-banner></app-page-banner>
+<!-- End Page Banner -->
+
+<!-- Jobs -->
+ 
+<div class="jobs-area">
+    <div class="main">
+        <div class="row">
+            <div class="col-lg-8 col-md-12">
+
+                <form class="jobs-search-form">
+                    <div class="row mx-0 align-items-center">
+                        <div class="col-4 px-0">
+                            <div class="form-group position-relative">
+                                <i class="ri-search-line"></i>
+                                <input type="text" class="form-control" placeholder="Job title, key words or company">
+                            </div>
+                        </div>
+                        <div class="col-4 px-0">
+                            <div class="form-group position-relative">
+                                <i class="ri-map-pin-line"></i>
+                                <select class="form-select">
+                                    <option selected>All Location</option>
+                                    <option value="1">Tokyo, Japan</option>
+                                    <option value="2">New York, USA</option>
+                                    <option value="3">London, England</option>
+                                    <option value="4">Beijing, China</option>
+                                    <option value="5">Toronto, Canada</option>
+                                    <option value="6">Chicago, USA</option>
+                                    <option value="7">Hong Kong, China</option>
+                                    <option value="8">Los Angeles, USA</option>
+                                    <option value="9">São Paulo, Brazil</option>
+                                    <option value="10">Seoul, South Korea</option>
+                                    <option value="11">Barcelona, Spain</option>
+                                    <option value="12">Istanbul, Turkey</option>
+                                    <option value="13">Osaka, Japan</option>
+                                    <option value="14">Copenhagen, Denmark</option>
+                                    <option value="15">Madrid, Spain</option>
+                                    <option value="16">Bangkok, Thailand</option>
+                                    <option value="17">Dubai, UAE</option>
+                                    <option value="18">Melbourne, Australia</option>
+                                    <option value="19">Amsterdam, Netherlands</option>
+                                    <option value="20">Paris, France</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-4 px-0">
+                            <button type="submit" class="default-btn">
+                                Search Jobs
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="jove-grid-sorting row align-items-center">
+                    <div class="col-lg-6 col-md-6 result-count">
+                        <p>
+                            Showing <span class="count">1 – 10</span> of 784 results
+                        </p>
+                    </div>
+                    <div class="col-lg-6 col-md-6 ordering">
+                        <div class="select-box">
+                            <label>Sort By:</label>
+                            <select class="form-select">
+                                <option selected="">Default</option>
+                                <option value="1">Popularity</option>
+                                <option value="2">Latest</option>
+                                <option value="3">Price: low to high</option>
+                                <option value="4">Price: high to low</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    
+                    <div class="col-lg-12">
+                        <div class="single-job-box">
+                            <div class="d-sm-flex align-items-center justify-content-between">
+                                <div class="d-sm-flex align-items-center">
+                                    <div class="company-logo">
+                                        <img src="../../../../assets/images/candidate-dash-logo.png" alt="company-image">
+                                    </div>
+                                    <div class="content">
+                                        <h3>
+                                            <a routerLink="/job-details">
+                                                Mechanical Engineer
+                                            </a>
+                                        </h3>
+                                        <span class="location d-block">
+                                            Topoint in London
+                                        </span>
+                                        <span class="job-type d-block">
+                                            Full Time
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="apply-btn">
+                                    <a routerLink="/job-details" class="default-btn">
+                                        Apply
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="info d-sm-flex align-items-center justify-content-between">
+                                <span class="salary d-block">
+                                    <span>Salary:</span>
+                                    <span>$1K - $3K</span>
+                                    /monthly
+                                </span>
+                                <span class="deadline d-block">
+                                    <span>Deadline:</span>
+                                    Oct 30, 2023
+                                    <span>(20 mins ago)</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="single-job-box">
+                            <div class="d-sm-flex align-items-center justify-content-between">
+                                <div class="d-sm-flex align-items-center">
+                                    <div class="company-logo">
+                                        <img src="../../../../assets/images/candidate-dash-logo-2.png" alt="company-image">
+                                    </div>
+                                    <div class="content">
+                                        <h3>
+                                            <a routerLink="/job-details">
+                                                Senior Support Engineer
+                                            </a>
+                                        </h3>
+                                        <span class="location d-block">
+                                            Zayper in Barcelona
+                                        </span>
+                                        <span class="job-type d-block">
+                                            Part Time
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="apply-btn">
+                                    <a routerLink="/job-details" class="default-btn">
+                                        Apply
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="info d-sm-flex align-items-center justify-content-between">
+                                <span class="salary d-block">
+                                    <span>Salary:</span>
+                                    <span>$10 - $50</span>
+                                    /hourly
+                                </span>
+                                <span class="deadline d-block">
+                                    <span>Deadline:</span>
+                                    Nov 10, 2023
+                                    <span>(1 day ago)</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="single-job-box">
+                            <div class="d-sm-flex align-items-center justify-content-between">
+                                <div class="d-sm-flex align-items-center">
+                                    <div class="company-logo">
+                                        <img src="../../../../assets/images/candidate-dash-logo.png" alt="company-image">
+                                    </div>
+                                    <div class="content">
+                                        <h3>
+                                            <a routerLink="/job-details">
+                                                Mechanical Engineer
+                                            </a>
+                                        </h3>
+                                        <span class="location d-block">
+                                            Topoint in London
+                                        </span>
+                                        <span class="job-type d-block">
+                                            Full Time
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="apply-btn">
+                                    <a routerLink="/job-details" class="default-btn">
+                                        Apply
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="info d-sm-flex align-items-center justify-content-between">
+                                <span class="salary d-block">
+                                    <span>Salary:</span>
+                                    <span>$1K - $3K</span>
+                                    /monthly
+                                </span>
+                                <span class="deadline d-block">
+                                    <span>Deadline:</span>
+                                    Oct 30, 2023
+                                    <span>(20 mins ago)</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="single-job-box">
+                            <div class="d-sm-flex align-items-center justify-content-between">
+                                <div class="d-sm-flex align-items-center">
+                                    <div class="company-logo">
+                                        <img src="../../../../assets/images/candidate-dash-logo-2.png" alt="company-image">
+                                    </div>
+                                    <div class="content">
+                                        <h3>
+                                            <a routerLink="/job-details">
+                                                Senior Support Engineer
+                                            </a>
+                                        </h3>
+                                        <span class="location d-block">
+                                            Zayper in Barcelona
+                                        </span>
+                                        <span class="job-type d-block">
+                                            Part Time
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="apply-btn">
+                                    <a routerLink="/job-details" class="default-btn">
+                                        Apply
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="info d-sm-flex align-items-center justify-content-between">
+                                <span class="salary d-block">
+                                    <span>Salary:</span>
+                                    <span>$10 - $50</span>
+                                    /hourly
+                                </span>
+                                <span class="deadline d-block">
+                                    <span>Deadline:</span>
+                                    Nov 10, 2023
+                                    <span>(1 day ago)</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="single-job-box">
+                            <div class="d-sm-flex align-items-center justify-content-between">
+                                <div class="d-sm-flex align-items-center">
+                                    <div class="company-logo">
+                                        <img src="../../../../assets/images/candidate-dash-logo.png" alt="company-image">
+                                    </div>
+                                    <div class="content">
+                                        <h3>
+                                            <a routerLink="/job-details">
+                                                Mechanical Engineer
+                                            </a>
+                                        </h3>
+                                        <span class="location d-block">
+                                            Topoint in London
+                                        </span>
+                                        <span class="job-type d-block">
+                                            Full Time
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="apply-btn">
+                                    <a routerLink="/job-details" class="default-btn">
+                                        Apply
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="info d-sm-flex align-items-center justify-content-between">
+                                <span class="salary d-block">
+                                    <span>Salary:</span>
+                                    <span>$1K - $3K</span>
+                                    /monthly
+                                </span>
+                                <span class="deadline d-block">
+                                    <span>Deadline:</span>
+                                    Oct 30, 2023
+                                    <span>(20 mins ago)</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="single-job-box">
+                            <div class="d-sm-flex align-items-center justify-content-between">
+                                <div class="d-sm-flex align-items-center">
+                                    <div class="company-logo">
+                                        <img src="../../../../assets/images/candidate-dash-logo-2.png" alt="company-image">
+                                    </div>
+                                    <div class="content">
+                                        <h3>
+                                            <a routerLink="/job-details">
+                                                Senior Support Engineer
+                                            </a>
+                                        </h3>
+                                        <span class="location d-block">
+                                            Zayper in Barcelona
+                                        </span>
+                                        <span class="job-type d-block">
+                                            Part Time
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="apply-btn">
+                                    <a routerLink="/job-details" class="default-btn">
+                                        Apply
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="info d-sm-flex align-items-center justify-content-between">
+                                <span class="salary d-block">
+                                    <span>Salary:</span>
+                                    <span>$10 - $50</span>
+                                    /hourly
+                                </span>
+                                <span class="deadline d-block">
+                                    <span>Deadline:</span>
+                                    Nov 10, 2023
+                                    <span>(1 day ago)</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="single-job-box">
+                            <div class="d-sm-flex align-items-center justify-content-between">
+                                <div class="d-sm-flex align-items-center">
+                                    <div class="company-logo">
+                                        <img src="../../../../assets/images/candidate-dash-logo.png" alt="company-image">
+                                    </div>
+                                    <div class="content">
+                                        <h3>
+                                            <a routerLink="/job-details">
+                                                Mechanical Engineer
+                                            </a>
+                                        </h3>
+                                        <span class="location d-block">
+                                            Topoint in London
+                                        </span>
+                                        <span class="job-type d-block">
+                                            Full Time
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="apply-btn">
+                                    <a routerLink="/job-details" class="default-btn">
+                                        Apply
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="info d-sm-flex align-items-center justify-content-between">
+                                <span class="salary d-block">
+                                    <span>Salary:</span>
+                                    <span>$1K - $3K</span>
+                                    /monthly
+                                </span>
+                                <span class="deadline d-block">
+                                    <span>Deadline:</span>
+                                    Oct 30, 2023
+                                    <span>(20 mins ago)</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="single-job-box">
+                            <div class="d-sm-flex align-items-center justify-content-between">
+                                <div class="d-sm-flex align-items-center">
+                                    <div class="company-logo">
+                                        <img src="../../../../assets/images/candidate-dash-logo-2.png" alt="company-image">
+                                    </div>
+                                    <div class="content">
+                                        <h3>
+                                            <a routerLink="/job-details">
+                                                Senior Support Engineer
+                                            </a>
+                                        </h3>
+                                        <span class="location d-block">
+                                            Zayper in Barcelona
+                                        </span>
+                                        <span class="job-type d-block">
+                                            Part Time
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="apply-btn">
+                                    <a routerLink="/job-details" class="default-btn">
+                                        Apply
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="info d-sm-flex align-items-center justify-content-between">
+                                <span class="salary d-block">
+                                    <span>Salary:</span>
+                                    <span>$10 - $50</span>
+                                    /hourly
+                                </span>
+                                <span class="deadline d-block">
+                                    <span>Deadline:</span>
+                                    Nov 10, 2023
+                                    <span>(1 day ago)</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+
+                <div class="pagination-area">
+                    <a routerLink="/jobs-listing" class="next page-numbers">
+                        <i class="ri-arrow-left-line"></i>
+                    </a>
+                    <span class="page-numbers current" aria-current="page">1</span>
+                    <a routerLink="/jobs-listing" class="page-numbers">2</a>
+                    <a routerLink="/jobs-listing" class="page-numbers">3</a>
+                    <a routerLink="/jobs-listing" class="next page-numbers">
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <app-jobs-sidebar></app-jobs-sidebar>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-subscribe></app-subscribe>
+
+<app-footer></app-footer>
+
+<ngx-scrolltop></ngx-scrolltop>

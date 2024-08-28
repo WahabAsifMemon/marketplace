@@ -1,0 +1,128 @@
+<app-navbar></app-navbar>
+
+<section>
+    <div class="cover-img display justify-content-between">
+        <div class="left">
+            <h1>Your Path to Career Success Starts Here</h1>
+            <h2>Browse through a curated selection of job openings
+                and take the next step in your career journey.</h2>
+            <div style="margin-top: 0.8vw;">
+                <div class="d-flex justify-content-between w-100">
+                    <p>Find the right Job</p>
+                    <p>Looking to hire talents?</p>
+                </div>
+                <app-search-bar style="padding: 0;"></app-search-bar>
+                <div class="search-bold-text d-flex">
+                    <p>Popular Searches:</p>
+                    <span>Designer, Developer, Tester, Writing</span>
+                </div>
+            </div>
+        </div>
+        <div class="right"> </div>
+    </div>
+</section>
+
+<section class="sec-2">
+    <div class="popular-jobs">
+        <h1 class="textCenter">Popular Jobs</h1>
+
+        <div class="tabs-container">
+            <div class="tabs">
+                <div class="tab" *ngFor="let tab of tabs; let i = index" [ngClass]="{ 'active': selectedTab === i }"
+                    (click)="selectTab(i)">
+                    {{ tab.label }}
+                </div>
+            </div>
+        </div>
+
+        <div class="content-container">
+            <ng-container *ngIf="selectedTab !== null">
+                <div class="card-container d-flex">
+                    <div class="card" *ngFor="let card of tabs[selectedTab].cards">
+                        <div class="d-flex justify-content-between img-content">
+                            <img [src]="card.image" alt="Card Image" class="card-image" />
+                            <div class="head-para">
+                                <div class="main-head">{{card.mainHead}}</div>
+                                <div class="para">{{card.address}}</div>
+                            </div>
+                        </div>
+                        <div class="card-heading">{{ card.heading }}</div>
+
+                        <div class="card-tag">{{ card.cardTag }}</div>
+
+
+                        <p class="card-skill">{{ card.skills }}</p>
+
+                        <div class="d-flex justify-content-between" style="align-items: center;">
+                            <div class="card-amount"><span>${{card.amount}}/</span>monthly</div>
+                            <button class="card-button">{{ card.buttonText }}</button>
+
+                        </div>
+                    </div>
+                    <div class="see-more">
+                        <button>See More
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+
+    </div>
+</section>
+
+<section class="sec-3">
+    <div class="radical">
+        <h1 class="acc-head textCenter">
+            Frequently Asked Questions
+        </h1>
+        <div class="acc-box">
+            <div class="accordion-container">
+                <div class="accordion-item" *ngFor="let item of accordionItems; let i = index">
+                    <div class="accordion-header" (click)="toggleAccordion(i)">
+                        <h2>{{ item.title }}</h2>
+                        <div class="acc-icon">
+                            <img class="icon"
+                                [src]="item.open ? 'assets/images/minus-icon.svg' : 'assets/images/plus-icon.svg'"
+                                alt="Accordion Toggle" />
+                        </div>
+                    </div>
+                    <div class="accordion-content" [ngStyle]="{ 'display': item.open ? 'block' : 'none' }">
+                        <p>{{ item.content }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="see-more">
+                <button>
+                    See More
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="sec-4">
+    <div class="vector-bg">
+        <h1 class="textCenter">Start Your Future Today</h1>
+        <h2 class="textCenter">Explore endless opportunities and find your perfect career path</h2>
+        <div class="auth-btn d-flex justify-content-between">
+            <button>Sign Up</button>
+            <button class="login">Login</button>
+        </div>
+    </div>
+</section>
+
+<!-- Logo slider -->
+
+<app-logo-slider></app-logo-slider>
+
+<!-- Logo slider -->
+
+<!-- footer -->
+
+<app-custom-footer></app-custom-footer>
+
+<!-- footer -->

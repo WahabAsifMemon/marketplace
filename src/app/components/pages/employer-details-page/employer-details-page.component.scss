@@ -1,0 +1,484 @@
+.main {
+    width: 90%;
+    margin: auto;
+}
+
+.employer-details-area{
+    padding: 7vw 0vw 2vw;
+}
+
+.single-employer-box {
+    padding: 1.6vw;
+    margin-bottom: 1.6vw;
+    border-radius: 1.2vw;
+    background-color: var(--whiteColor);
+    border: 0.1vw solid var(--borderColor);
+
+    .image {
+        width: 7.5vw;
+        height: 7.5vw;
+        position: relative;
+        border-radius: 50%;
+        text-align: center;
+        background-color: #f4f7fb;
+
+        img {
+            left: 0;
+            right: 0;
+            top: 50%;
+            width: 3vw;
+            position: absolute;
+            transform: translateY(-50%);
+
+            margin: {
+                left: auto;
+                right: auto;
+            }
+
+            ;
+        }
+    }
+
+    .content {
+        margin-left: 20px;
+
+        h3 {
+            font-size: 1.2vw;
+            font-family: 'mon-semi';
+            color: black;
+        }
+
+        span {
+            font-size: 1vw;
+            font-family: 'mon-reg';
+            color: black;
+        }
+    }
+
+    .jobs-open {
+        a {
+            font-size: 1vw;
+            font-family: 'mon-bold';
+            border-radius: 2vw;
+            padding: .5vw 1.3vw 0.45vw;
+            color: #3a4e90;
+            background-color: #f4f7fb;
+        }
+
+        span {
+            font-size: 1.1vw;
+            font-family: 'mon-reg';
+            color: var(--pinkColor);
+            background-color: #f4f7fb;
+            border-radius: 2vw;
+            padding: 0.6vw 2vw;
+            transition: var(--transition);
+
+            &:hover {
+                background-color: #3a4e90;
+                color: var(--whiteColor);
+            }
+        }
+    }
+
+    &:hover {
+        .jobs-open {
+            a {
+                color: var(--whiteColor);
+                background-color: #3a4e90;
+            }
+        }
+    }
+}
+
+
+.employer-details-description {
+    h3 {
+        font-size: 1.2vw;
+        margin-bottom: 1vw;
+        font-family: 'mon-bold';
+
+        &:not(:first-child) {
+            margin-top: 2.5vw;
+        }
+    }
+
+    p {
+        font-size: 1.1vw;
+        font-family: 'mon-reg';
+        color: black;
+    }
+
+    ul {
+        padding-left: 2.3vw;
+
+        margin: {
+            top: 1.6vw;
+            bottom: 2vw;
+        }
+
+        ;
+
+        li {
+            margin-bottom: 0.9vw;
+            font-size: 1.1vw;
+            font-family: "mon-reg";
+            color: black;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .images {
+        margin-bottom: 2.3vw;
+
+        img {
+            border-radius: 1.02vw;
+            object-fit: cover;
+        }
+    }
+}
+
+.sidebar-area {
+    background-color: #f5f9fc;
+    border-radius: 10px;
+
+    .box {
+        padding: 2.5vw;
+        border-bottom: 0.1vw solid var(--borderColor);
+
+        h3 {
+            font-size: 1.2vw;
+            margin-bottom: 1.7vw;
+            font-family: 'mon-bold';
+        }
+
+        .information {
+            font-family: var(--headingFontFamily);
+
+            li {
+                font-size: 1vw;
+                margin-bottom: 1.02vw;
+                font-family: 'mon-reg';
+                color: black;
+
+                span {
+                    font-size: 1.05vw;
+                    font-family: 'mon-semi';
+                }
+
+                a {
+                    color: var(--bodyColor);
+                    margin-left: 2px;
+
+                    &:hover {
+                        color: var(--primaryColor);
+                    }
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .socials-link {
+            li {
+                margin-bottom: 0.85vw;
+
+                a {
+                    font-size: 1vw;
+                    font-family: 'mon-reg';
+                    color: black;
+
+                    span {
+                        width: 2.5vw;
+                        height: 2.5vw;
+                        line-height: 2.5vw;
+                        text-align: center;
+                        border-radius: 50%;
+                        margin-right: 0.9vw;
+                        color: var(--whiteColor);
+                        transition: var(--transition);
+                        background-color: var(--primaryColor);
+                    }
+
+                    &.facebook {
+                        span {
+                            background-color: #1877f2;
+                        }
+                    }
+
+                    &.twitter {
+                        span {
+                            background-color: #000000;
+                        }
+                    }
+
+                    &.linkedin {
+                        span {
+                            background-color: #0077b5;
+                        }
+                    }
+
+                    &:hover {
+                        color: var(--primaryColor);
+                    }
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        form {
+            .form-group {
+                margin-bottom: 15px;
+
+                label {
+                    display: block;
+                    margin-bottom: 8px;
+                }
+
+                .form-control {
+                    height: 50px;
+                    padding: 10px 15px;
+                    border-radius: 5px;
+                    font-size: var(--fontSize);
+                    color: var(--headingColor);
+                    border: 1px solid #e0e6e9;
+                    transition: var(--transition);
+
+                    &::placeholder {
+                        color: var(--bodyColor);
+                        transition: var(--transition);
+                    }
+
+                    &:focus {
+                        border-color: var(--primaryColor);
+
+                        &::placeholder {
+                            color: transparent;
+                        }
+                    }
+                }
+
+                textarea.form-control {
+                    height: auto;
+                    padding-top: 15px;
+                }
+            }
+        }
+
+        iframe {
+            width: 100%;
+            height: 23vw;
+            border-radius: 0.85vw;
+        }
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .single-employer-box {
+        margin-bottom: 25px;
+        text-align: center;
+        border-radius: 5px;
+        padding: 15px;
+
+        .image {
+            width: 90px;
+            height: 90px;
+
+            margin: {
+                left: auto;
+                right: auto;
+            }
+
+            ;
+        }
+
+        .content {
+            margin: {
+                left: 0;
+                top: 12px;
+                bottom: 15px;
+            }
+
+            ;
+
+            h3 {
+                font-size: 16px;
+            }
+        }
+    }
+
+    .employer-details-description {
+        h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+
+            &:not(:first-child) {
+                margin-top: 25px;
+            }
+        }
+
+        ul {
+            padding-left: 17px;
+
+            margin: {
+                top: 15px;
+                bottom: 20px;
+            }
+
+            ;
+
+            li {
+                margin-bottom: 0.85vw;
+            }
+        }
+
+        .images {
+            margin-bottom: 20px;
+
+            img {
+                border-radius: 5px;
+            }
+        }
+    }
+
+    .sidebar-area {
+        border-radius: 5px;
+        margin-top: 25px;
+
+        .box {
+            padding: 20px;
+
+            h3 {
+                font-size: 16px;
+                margin-bottom: 15px;
+            }
+
+            .information {
+                li {
+                    font-size: 1vw;
+                    margin-bottom: 1.02vw;
+                    font-family: 'mon-reg';
+                    color: black;
+                }
+            }
+
+            form {
+                .form-group {
+                    label {
+                        margin-bottom: 7px;
+                    }
+
+                    .form-control {
+                        height: 45px;
+                        font-size: 14px;
+                        padding: 10px 12px;
+                    }
+
+                    textarea.form-control {
+                        padding-top: 12px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    .single-employer-box {
+        text-align: start;
+
+        .content {
+            margin: {
+                top: 0;
+                bottom: 0;
+                left: 15px;
+            }
+
+            ;
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .single-employer-box {
+        border-radius: 10px;
+        margin-bottom: 30px;
+
+        .content {
+            h3 {
+                font-size: 18px;
+            }
+        }
+    }
+
+    .employer-details-description {
+        h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+
+            &:not(:first-child) {
+                margin-top: 25px;
+            }
+        }
+
+        .images {
+            img {
+                border-radius: 10px;
+            }
+        }
+    }
+
+    .sidebar-area {
+        margin-top: 25px;
+
+        .box {
+            padding: 25px;
+
+            h3 {
+                margin-bottom: 15px;
+            }
+
+            .information {
+                li {
+                    font-size: 14px;
+                }
+            }
+
+            form {
+                .form-group {
+                    .form-control {
+                        height: 48px;
+                        font-size: 15px;
+                        padding: 10px 12px;
+                    }
+
+                    textarea.form-control {
+                        padding-top: 12px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+

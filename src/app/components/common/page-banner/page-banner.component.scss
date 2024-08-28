@@ -1,0 +1,32 @@
+h1{
+    font-size: 1.7vw;
+    font-family: 'mon-bold';
+    color: var(--black);
+    padding-left: 7%;
+}
+
+.container-width{
+    width: 85%;
+    margin: auto;
+}
+
+.list-unstyled{
+    float: inline-end;
+}
+
+.list-unstyled span{
+    padding: 0 0.5vw;
+    font-size: 2vw;
+    color: gray;
+}
+
+.list-unstyled li {
+    font-family: "reg";
+    font-size: 1.2vw;
+    color: var(--black);
+}
+
+.link a{
+    font-size: 1.1vw;
+    font-family: 'mon-bold';
+} 

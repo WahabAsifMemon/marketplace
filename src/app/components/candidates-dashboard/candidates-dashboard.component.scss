@@ -1,0 +1,92 @@
+h1{
+    font-size: 1.4vw;
+    font-family: 'mon-bold';
+    color: black;
+}
+
+
+.main-content {
+    overflow: hidden;
+    min-height: 100vh;
+    background-color: #f5f9fc;
+    padding: {
+        top: 130px;
+        left: 300px;
+        right: 30px;
+        bottom: 30px;
+    };
+}
+
+.default-btn {
+    font-size: 1vw !important;
+    font-family: "mon-reg";
+    padding: 0.75vw 2vw;
+    background-color: var(--pinkColor);
+    border-radius: 5px;
+    color: var(--whiteColor);
+    border: 0;
+    transition: all 0.5s ease;
+
+    &:hover {
+        background-color: transparent;
+        border: 0.12vw solid var(--pinkColor);
+        color: var(--pinkColor);
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .main-content {
+        padding: {
+            top: 105px;
+            left: 15px;
+            right: 15px;
+            bottom: 25px;
+        };
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .main-content {
+        padding: {
+            top: 105px;
+            left: 25px;
+            right: 25px;
+            bottom: 25px;
+        };
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+    .main-content {
+        padding: {
+            top: 110px;
+            left: 25px;
+            right: 25px;
+            bottom: 25px;
+        };
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {
+
+    .main-content {
+        padding-left: 360px;
+    }
+
+}

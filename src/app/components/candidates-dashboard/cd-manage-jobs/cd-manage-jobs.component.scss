@@ -1,0 +1,474 @@
+// Breadcrumb Title
+.breadcrumb-title {
+    margin-bottom: 2vw;
+
+    h1 {
+        font-size: 1.7vw;
+        font-family: "mon-bold";
+        color: black;
+    }
+}
+
+// Card
+.jove-card {
+    background-color: var(--whiteColor);
+    margin-bottom: 2.2vw;
+    border-radius: 1.1vw;
+    padding: 2.5vw;
+
+
+    .single-job-box {
+        margin-bottom: 2.2vw;
+        border-radius: 1vw;
+        padding: 2.5vw 2.5vw 0;
+        background-color: var(--whiteColor);
+        border: 0.1vw solid var(--borderColor);
+
+        .image {
+            width: 7.5vw;
+            height: 7.5vw;
+            position: relative;
+            border-radius: 50%;
+            text-align: center;
+            background-color: #f4f7fb;
+
+            img {
+                left: 0;
+                right: 0;
+                top: 50%;
+                width: 3vw;
+                position: absolute;
+                transform: translateY(-50%);
+
+                margin: {
+                    left: auto;
+                    right: auto;
+                }
+
+                ;
+            }
+        }
+
+        .content {
+            margin-left: 1.4vw;
+
+            h3 {
+
+                font-size: 1.3vw;
+                margin-bottom: 0.35vw;
+                font-family: 'mon-semi';
+                color: black;
+
+            }
+
+            .location {
+                font-size: 1.2vw;
+                margin-bottom: 0.1vw;
+                font-family: 'mon-reg';
+            }
+
+            .job-type {
+                font-size: 1.1vw;
+                font-family: "mon-reg";
+                color: #4086f6;
+            }
+        }
+
+        .custom-info {
+            .active {
+                font-size: 1.2vw;
+                color: #3b4e90;
+                margin-right: 2.2vw;
+                font-family: 'mon-bold';
+
+                &.closed {
+                    color: red;
+                }
+            }
+
+            ul {
+                li {
+                    margin: {
+                        left: 0.3vw;
+                        right: 0.3vw;
+                    }
+
+                    ;
+
+                    button {
+                        padding: 0;
+                        width: 2.5vw;
+                        height: 2.5vw;
+                        border: none;
+                        cursor: pointer;
+                        font-size: 1.2vw;
+                        position: relative;
+                        color: var(--primaryColor);
+                        background-color: #f5f9fc;
+                        transition: var(--transition);
+
+                        i {
+                            left: 0;
+                            right: 0;
+                            top: 50%;
+                            position: absolute;
+                            transform: translateY(-50%);
+                        }
+
+                        &:hover {
+                            color: var(--whiteColor);
+                            background-color: var(--primaryColor);
+                        }
+                    }
+
+                    &:first-child {
+                        margin-left: 0;
+                    }
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+
+        .info {
+            margin-top: 2.5vw;
+            padding: 1vw 2.5vw;
+            border-top: 0.1vw solid var(--borderColor);
+            margin-left: -2.5vw;
+            margin-right: -2.5vw;
+
+            ;
+
+            .salary {
+
+                font-size: 1.1vw;
+                font-family: 'mon-reg';
+
+                span {
+                    color: var(--headingColor);
+
+                    &:nth-child(1) {
+                        font-family: 'mon-semi';
+                        margin-right: 0.01vw;
+                    }
+
+                    &:nth-child(2) {
+                        color: #4086f6;
+                    }
+                }
+            }
+
+            .created {
+                font-size: 1.1vw;
+                font-family: 'mon-reg';
+
+                span {
+                    font-family: 'mon-semi';
+                    color: #3b4e90;
+                }
+            }
+
+            .deadline {
+                font-size: 1.1vw;
+                font-family: 'mon-reg';
+
+                span {
+                    font-family: 'mon-semi';
+                    color: #d8342b;
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    // Breadcrumb Title
+    .breadcrumb-title {
+        h1 {
+            font-size: 20px;
+        }
+    }
+
+    // Card
+    .jove-card {
+        border-radius: 5px;
+        padding: 20px 15px;
+
+        .title {
+            font-size: 16px;
+            margin-bottom: 15px;
+
+            padding: {
+                left: 15px;
+                right: 15px;
+                bottom: 10px;
+            }
+
+            ;
+
+            margin: {
+                left: -15px;
+                right: -15px;
+            }
+
+            ;
+        }
+
+        .single-job-box {
+            border-radius: 5px;
+            text-align: center;
+            padding: 15px 15px 0;
+
+            .image {
+                width: 90px;
+                height: 90px;
+
+                margin: {
+                    left: auto;
+                    right: auto;
+                }
+
+                ;
+            }
+
+            .content {
+                margin: {
+                    left: 0;
+                    top: 12px;
+                    bottom: 6px;
+                }
+
+                ;
+
+                h3 {
+                    font-size: 16px;
+                }
+
+                .location {
+                    font-size: 15px;
+                }
+            }
+
+            .custom-info {
+                .active {
+                    margin: {
+                        right: 0;
+                        bottom: 15px;
+                    }
+
+                    ;
+                }
+
+                ul {
+                    li {
+                        margin: {
+                            left: 3px;
+                            right: 3px;
+                        }
+
+                        ;
+                    }
+                }
+            }
+
+            .info {
+                margin-top: 15px;
+                padding: 12px 15px;
+
+                margin: {
+                    left: -15px;
+                    right: -15px;
+                }
+
+                ;
+
+                .salary {
+                    margin-bottom: 5px;
+                }
+
+                .created {
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    // Card
+    .jove-card {
+        .single-job-box {
+            text-align: start;
+
+            .content {
+                margin: {
+                    top: 0;
+                    bottom: 0;
+                    left: 15px;
+                }
+
+                ;
+            }
+
+            .custom-info {
+                .active {
+                    margin: {
+                        bottom: 0;
+                        right: 15px;
+                    }
+
+                    ;
+                }
+            }
+
+            .info {
+                .salary {
+                    margin-bottom: 0;
+                }
+
+                .created {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    // Breadcrumb Title
+    .breadcrumb-title {
+        h1 {
+            font-size: 22px;
+        }
+    }
+
+    // Card
+    .jove-card {
+        border-radius: 10px;
+        padding: 25px;
+
+        .title {
+            font-size: 18px;
+
+            padding: {
+                left: 25px;
+                right: 25px;
+                bottom: 12px;
+            }
+
+            ;
+
+            margin: {
+                left: -25px;
+                right: -25px;
+            }
+
+            ;
+        }
+
+        .single-job-box {
+            border-radius: 10px;
+            padding: 25px 25px 0;
+
+            .content {
+                h3 {
+                    font-size: 18px;
+                }
+
+                .location {
+                    font-size: 16px;
+                }
+            }
+
+            .custom-info {
+                li {
+                    margin: {
+                        left: 3px;
+                        right: 3px;
+                    }
+
+                    ;
+                }
+            }
+
+            .info {
+                margin-top: 25px;
+                padding: 15px 25px;
+
+                margin: {
+                    left: -25px;
+                    right: -25px;
+                }
+
+                ;
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+// @media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+//     // Card
+//     .jove-card {
+//         padding: 25px;
+
+//         .title {
+//             padding: {
+//                 left: 25px;
+//                 right: 25px;
+//             }
+
+//             ;
+
+//             margin: {
+//                 left: -25px;
+//                 right: -25px;
+//             }
+
+//             ;
+//         }
+
+//         .single-job-box {
+//             padding: 25px 25px 0;
+
+//             .info {
+//                 margin-top: 25px;
+//                 padding: 15px 25px;
+
+//                 margin: {
+//                     left: -25px;
+//                     right: -25px;
+//                 }
+
+//                 ;
+//             }
+//         }
+//     }
+
+// }
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {
+
+    .row {
+        .col-xxl-12 {
+            width: 50%;
+        }
+    }
+
+}
