@@ -149,13 +149,6 @@
 <ng-container>
   <ng-template #addModal let-modal>
     <div class="modal-body checkoutModal completed">
-      <!-- Modal Header with Close Button -->
-      <div class="modal-header">
-        <button type="button" class="close" aria-label="Close" (click)="modal.close()">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-
       <h5 style="color: black; font-weight: bold;" class="modal-title">Candidate Profile</h5>
 
       <!-- Candidate Personal Details -->
@@ -242,7 +235,7 @@
             [disabled]="!applyForm.valid"
           />
           <label class="form-check-label" for="termsCheckbox">
-            I agree to the <a href="/terms-conditions" target="_blank">Terms and Conditions</a> .
+            I agree to the <a href="/terms-conditions" target="_blank">Terms and Conditions</a>.
           </label>
         </div>
       </div>
@@ -262,5 +255,4 @@
     </div>
   </ng-template>
 </ng-container>
-
 
