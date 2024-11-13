@@ -1,0 +1,299 @@
+<!-- Title -->
+<div class="breadcrumb-title">
+    <h1 class="mb-0 fw-semibold">
+        Company Profile
+    </h1>
+</div>
+
+<!-- Company Profile -->
+<div class="jove-card">
+    <h3 class="title">
+        My Profile
+    </h3>
+    <form [formGroup]="companyProfile" >
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="form-group upload-photo">
+                    <label for="main_logo">
+                        Upload new photo
+                    </label>
+                    <input id="main_logo" type="file" (change)="onImageSelected($event)"  accept="image/*">
+
+                    <p>Maximum file size: 2 MB</p>
+                    <div *ngIf="(companyProfile.get('main_logo')?.touched || companyProfile.get('main_logo')?.invalid) && save">
+                      <small *ngIf="companyProfile.get('main_logo')?.errors?.['required']" class="text-danger"> Picture is required.</small>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="col-lg-6 col-md-6">
+                <div class="form-group">
+                    <label for="company_name">
+                        Company name
+                    </label>
+                    <input id="company_name" type="text" class="form-control shadow-none" formControlName="company_name">
+                    <div *ngIf="(companyProfile.get('company_name')?.touched || companyProfile.get('company_name')?.invalid) && save">
+                      <small *ngIf="companyProfile.get('company_name')?.errors?.['required']" class="text-danger"> Company name is required.</small>
+                      <small *ngIf="companyProfile.get('company_name')?.errors?.['minlength']" class="text-danger"> Company name must be at least 5 characters long.</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="form-group">
+                    <label for="email">
+                        Email address
+                    </label>
+                    <input id="email" type="email" class="form-control shadow-none"  formControlName="email" readonly>
+                    <div *ngIf="(companyProfile.get('email')?.touched || companyProfile.get('email')?.invalid) && save">
+                      <small *ngIf="companyProfile.get('email')?.errors?.['required']" class="text-danger"> Email is required.</small>
+                      <small *ngIf="companyProfile.get('email')?.errors?.['email']" class="text-danger"> Please enter valid email.</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+              <div class="form-group">
+                <label for="phone_number">
+                  Phone No
+                </label>
+                <div class="input-group">
+                  <span class="input-group-text">+1</span> <!-- Hardcoded +1 country code -->
+                  <input id="phone_number" type="text" class="form-control shadow-none" formControlName="phone_number" maxlength="15">
+                </div>
+                <div *ngIf="(companyProfile.get('phone_number')?.touched || companyProfile.get('phone_number')?.invalid) && save">
+                  <small *ngIf="companyProfile.get('phone_number')?.errors?.['required']" class="text-danger">Phone number is required</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6">
+                <div class="form-group">
+                    <label for="website">
+                        Website
+                    </label>
+                    <input id="website" type="text" class="form-control shadow-none"  formControlName="website">
+                    <div *ngIf="(companyProfile.get('website')?.touched || companyProfile.get('website')?.invalid) && save">
+                      <small *ngIf="companyProfile.get('website')?.errors?.['required']" class="text-danger">Website is required</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="form-group">
+                    <label for="since">
+                        Est. since
+                    </label>
+                    <input id="since" type="text" class="form-control shadow-none"  formControlName="since">
+                    <div *ngIf="(companyProfile.get('since')?.touched || companyProfile.get('since')?.invalid) && save">
+                      <small *ngIf="companyProfile.get('since')?.errors?.['required']" class="text-danger">Date is required</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="form-group">
+                    <label for="team_size">
+                        Team size
+                    </label>
+                    <input id="team_size" type="text" class="form-control shadow-none"  formControlName="team_size">
+                    <div *ngIf="(companyProfile.get('team_size')?.touched || companyProfile.get('team_size')?.invalid) && save">
+                      <small *ngIf="companyProfile.get('team_size')?.errors?.['required']" class="text-danger">Team Size  is required</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="form-group">
+                    <label for="category">
+                        Category
+                    </label>
+                    <input id="category" type="text" class="form-control shadow-none"  formControlName="category">
+                    <div *ngIf="(companyProfile.get('category')?.touched || companyProfile.get('category')?.invalid) && save">
+                      <small *ngIf="companyProfile.get('category')?.errors?.['required']" class="text-danger">Category is required</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="form-group">
+                    <label for="allow_in_search">
+                        Allow in search listing
+                    </label>
+                    <select id="allow_in_search" class="form-select shadow-none" formControlName="allow_in_search">
+                        <option selected>Please Select</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                    <div *ngIf="(companyProfile.get('allow_in_search')?.touched || companyProfile.get('allow_in_search')?.invalid) && save">
+                      <small *ngIf="(companyProfile.get('allow_in_search')?.errors?.['required'])" class="text-danger">Please select Team size.</small>
+                  </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6">
+                <div class="form-group">
+                    <label for="facebook">
+                        Facebook
+                    </label>
+                    <input id="facebook" type="text" class="form-control shadow-none"  formControlName="facebook">
+                    <div *ngIf="(companyProfile.get('facebook')?.touched || companyProfile.get('facebook')?.invalid) && save">
+                      <small *ngIf="companyProfile.get('facebook')?.errors?.['required']" class="text-danger">Facebook url is required</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="form-group">
+                    <label for="twitter">
+                        Twitter
+                    </label>
+                    <input id="twitter" type="text" class="form-control shadow-none"  formControlName="twitter">
+                    <div *ngIf="(companyProfile.get('twitter')?.touched || companyProfile.get('twitter')?.invalid) && save">
+                      <small *ngIf="companyProfile.get('twitter')?.errors?.['required']" class="text-danger">Twitter url is required</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="form-group">
+                    <label for="linkedin">
+                        Linkedin
+                    </label>
+                    <input id="linkedin" type="text" class="form-control shadow-none"  formControlName="linkedin">
+                    <div *ngIf="(companyProfile.get('linkedin')?.touched || companyProfile.get('linkedin')?.invalid) && save">
+                      <small *ngIf="companyProfile.get('linkedin')?.errors?.['required']" class="text-danger">Linkedin url is required</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="form-group">
+                    <label for="instagram">
+                        Instagram
+                    </label>
+                    <input id="instagram" type="text" class="form-control shadow-none"  formControlName="instagram">
+                    <div *ngIf="(companyProfile.get('instagram')?.touched || companyProfile.get('instagram')?.invalid) && save">
+                      <small *ngIf="companyProfile.get('instagram')?.errors?.['required']" class="text-danger">Instagram url is required</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-12 col-md-12">
+                <div class="form-group">
+                    <label for="about_company">
+                        About company
+                    </label>
+                    <textarea id="about_company" class="form-control shadow-none" cols="30" rows="8" formControlName="about_company">Welcome to a world of endless possibilities at Jove! It's not just a job search; it's a career evolution. Uncover your potential, chase your ambitions, and step into a realm where your dream job is not just a fantasy – it's waiting for you.</textarea>
+                    <div *ngIf="(companyProfile.get('about_company')?.touched || companyProfile.get('about_company')?.invalid) && save">
+                      <small *ngIf="companyProfile.get('about_company')?.errors?.['required']" class="text-danger">About company is required</small>
+                      <small *ngIf="companyProfile.get('about_company')?.errors?.['minlength']" class="text-danger">About company must be at least 10 characters long</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="default-btn" (click)="employeUpdate()">
+            Save
+        </button>
+    </form>
+</div>
+
+<!-- <div class="jove-card">
+    <h3 class="title">
+        Contact Information
+    </h3>
+    <form [formGroup]="contactInformation">
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <div class="form-group">
+                    <label for="country">
+                        Country
+                    </label>
+                    <select id="country" class="form-select shadow-none" formControlName="country">
+                        <option value="1" selected>Japan</option>
+                        <option value="2">USA</option>
+                        <option value="3">England</option>
+                        <option value="4">China</option>
+                        <option value="5">Canada</option>
+                        <option value="6">Brazil</option>
+                        <option value="7">South Korea</option>
+                        <option value="8">Spain</option>
+                        <option value="9">Turkey</option>
+                        <option value="10">Japan</option>
+                        <option value="11">Denmark</option>
+                        <option value="12">Thailand</option>
+                        <option value="13">UAE</option>
+                        <option value="14">Australia</option>
+                        <option value="15">Netherlands</option>
+                        <option value="16">France</option>
+                    </select>
+                    <div *ngIf="(contactInformation.get('country')?.touched || contactInformation.get('country')?.invalid) && saveContact">
+                      <small *ngIf="(contactInformation.get('country')?.errors?.['required'])" class="text-danger">Please select country.</small>
+                  </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="form-group">
+                    <label for="city">
+                        City
+                    </label>
+                    <select id="city" class="form-select shadow-none" formControlName="city">
+                        <option value="1" selected>Tokyo</option>
+                        <option value="2">New York</option>
+                        <option value="3">London</option>
+                        <option value="4">Beijing</option>
+                        <option value="5">Toronto</option>
+                        <option value="6">Chicago</option>
+                        <option value="7">Hong Kong</option>
+                        <option value="8">Los Angeles</option>
+                        <option value="9">São Paulo</option>
+                        <option value="10">Seoul</option>
+                        <option value="11">Barcelona</option>
+                        <option value="12">Istanbul</option>
+                        <option value="13">Osaka</option>
+                        <option value="14">Copenhagen</option>
+                        <option value="15">Madrid</option>
+                        <option value="16">Bangkok</option>
+                        <option value="17">Dubai</option>
+                        <option value="18">Melbourne</option>
+                        <option value="19">Amsterdam</option>
+                        <option value="20">Paris</option>
+                    </select>
+                    <div *ngIf="(contactInformation.get('city')?.touched || contactInformation.get('city')?.invalid) && saveContact">
+                      <small *ngIf="(contactInformation.get('city')?.errors?.['required'])" class="text-danger">Please select city.</small>
+                  </div>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12">
+                <div class="form-group">
+                    <label for="completeAddress">
+                        Complete address
+                    </label>
+                    <input id="completeAddress" type="text" class="form-control shadow-none" value="84 Wexham Road RH19 8EA, USA" formControlName="completeAddress">
+                    <div *ngIf="(contactInformation.get('completeAddress')?.touched || contactInformation.get('completeAddress')?.invalid) && saveContact">
+                        <small *ngIf="contactInformation.get('completeAddress')?.errors?.['required']" class="text-danger">Complete Address is required</small>
+                      </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="form-group">
+                    <label for="latitude">
+                        Latitude
+                    </label>
+                    <input id="latitude" type="text" class="form-control shadow-none" formControlName="latitude">
+                    <div *ngIf="(contactInformation.get('latitude')?.touched || contactInformation.get('latitude')?.invalid) && saveContact">
+                        <small *ngIf="contactInformation.get('latitude')?.errors?.['required']" class="text-danger">latitude is required</small>
+                      </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="form-group">
+                    <label for="longitude">
+                        Longitude
+                    </label>
+                    <input id="longitude" type="text" class="form-control shadow-none" formControlName="longitude">
+                    <div *ngIf="(contactInformation.get('longitude')?.touched || contactInformation.get('longitude')?.invalid) && saveContact">
+                        <small *ngIf="contactInformation.get('longitude')?.errors?.['required']" class="text-danger">longitude is required</small>
+                      </div>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="default-btn" (click)="saveContactFunction()">
+            Save
+        </button>
+    </form>
+</div> -->

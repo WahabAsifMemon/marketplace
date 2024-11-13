@@ -1,0 +1,537 @@
+<!-- Title -->
+<div class="breadcrumb-title">
+    <h1 class="mb-0">
+        My Resume
+    </h1>
+</div>
+
+<!-- Resume -->
+
+<div class="jove-card">
+    <h3 class="title">
+        Personal Details
+    </h3>
+    <form [formGroup]="personalDetailsForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <div class="form-group">
+                    <label>First name</label>
+                    <input type="text" formControlName="first_name" class="form-control shadow-none" placeholder="Alina">
+                    <div *ngIf="(personalDetailsForm.get('first_name')?.invalid || personalDetailsForm.get('first_name')?.touched) && saveDetails" class="text-danger">
+                        <small *ngIf="personalDetailsForm.get('first_name')?.errors?.['required']">First Name is required.</small>
+                        <small *ngIf="personalDetailsForm.get('first_name')?.errors?.['minlength']"> First Name must be atleast 3 characters long</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="form-group">
+                    <label>Last name</label>
+                    <input type="text" formControlName="last_name" class="form-control shadow-none" placeholder="Smith">
+                    <div *ngIf="(personalDetailsForm.get('last_name')?.invalid || personalDetailsForm.get('last_name')?.touched) && saveDetails" class="text-danger">
+                        <small *ngIf="personalDetailsForm.get('last_name')?.errors?.['required']">Last Name is required.</small>
+                        <small *ngIf="personalDetailsForm.get('last_name')?.errors?.['minlength']"> Last Name must be atleast 3 characters long</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6">
+                <div class="form-group">
+                    <label>Email address</label>
+                    <input type="email" formControlName="email" class="form-control shadow-none" placeholder="hello@doca.com">
+                    <div *ngIf="(personalDetailsForm.get('email')?.invalid || personalDetailsForm.get('email')?.touched) && saveDetails" class="text-danger">
+                        <small *ngIf="personalDetailsForm.get('email')?.errors?.['required']">Email is required.</small>
+                        <small *ngIf="personalDetailsForm.get('email')?.errors?.['email']">Invalid email.</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+              <div class="form-group">
+                <label for="phone">Phone</label>
+                <div class="input-group">
+                  <span class="input-group-text">+1</span> <!-- Prepend +1 as hardcoded value -->
+                  <input
+                    type="text"
+                    formControlName="phone_number"
+                    class="form-control shadow-none"
+                    placeholder="(514) 312-5678"
+                    maxlength="15"
+                  >
+                </div>
+                <div *ngIf="personalDetailsForm.get('phone_number')?.invalid && saveDetails" class="text-danger">
+                  <small *ngIf="personalDetailsForm.get('phone_number')?.errors?.['required']">Phone number is required.</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6">
+                <div class="form-group">
+                    <label>Date of birth</label>
+                    <input type="date" formControlName="dob" class="form-control shadow-none">
+                    <div *ngIf="(personalDetailsForm.get('dob')?.invalid || personalDetailsForm.get('dob')?.touched) && saveDetails" class="text-danger">
+                        <small *ngIf="personalDetailsForm.get('dob')?.errors?.['required']">Date of birth is required.</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="form-group">
+                    <label>Gender</label>
+                    <select formControlName="gender" class="form-select shadow-none">
+                        <option value="">Select</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="custom">Custom</option>
+                    </select>
+                    <div *ngIf="(personalDetailsForm.get('gender')?.invalid || personalDetailsForm.get('gender')?.touched) && saveDetails" class="text-danger">
+                        <small *ngIf="personalDetailsForm.get('gender')?.errors?.['required']">Gender is required.</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="form-group">
+                    <label>Marital status</label>
+                    <select formControlName="maritalStatus" class="form-select shadow-none">
+                        <option value="">Select</option>
+                        <option value="married">Married</option>
+                        <option value="single">Single</option>
+                        <option value="complicated">Complicated</option>
+                    </select>
+                    <div *ngIf="(personalDetailsForm.get('maritalStatus')?.invalid || personalDetailsForm.get('maritalStatus')?.touched) && saveDetails" class="text-danger">
+                        <small *ngIf="personalDetailsForm.get('maritalStatus')?.errors?.['required']">Marital status is required.</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="form-group">
+                    <label>Nationality</label>
+                    <select formControlName="nationality" class="form-select shadow-none">
+                        <option value="">Select</option>
+                        <option value="japan">Japan</option>
+                        <option value="usa">USA</option>
+                        <option value="england">England</option>
+                        <option value="china">China</option>
+                        <option value="canada">Canada</option>
+                        <option value="brazil">Brazil</option>
+                        <option value="south_korea">South Korea</option>
+                        <option value="spain">Spain</option>
+                        <option value="turkey">Turkey</option>
+                        <option value="denmark">Denmark</option>
+                        <option value="thailand">Thailand</option>
+                        <option value="uae">UAE</option>
+                        <option value="australia">Australia</option>
+                        <option value="netherlands">Netherlands</option>
+                        <option value="france">France</option>
+                    </select>
+                    <div *ngIf="(personalDetailsForm.get('nationality')?.invalid || personalDetailsForm.get('nationality')?.touched) && saveDetails" class="text-danger">
+                        <small *ngIf="personalDetailsForm.get('nationality')?.errors?.['required']">Nationality is required.</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6">
+              <div class="form-group">
+                  <label>Language</label>
+                  <input type="text" formControlName="language" class="form-control shadow-none" placeholder="Language">
+
+                  <div *ngIf="(personalDetailsForm.get('language')?.invalid || personalDetailsForm.get('language')?.touched) && saveDetails" class="text-danger">
+                      <small *ngIf="personalDetailsForm.get('language')?.errors?.['required']">Language is required.</small>
+                  </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6">
+                <div class="form-group">
+                    <label>City</label>
+                    <select id="city" class="form-select shadow-none" formControlName="city">
+                      <option value="Tokyo" selected>Tokyo</option>
+                      <option value="New York">New York</option>
+                      <option value="London">London</option>
+                      <option value="Beijing">Beijing</option>
+                      <option value="Toronto">Toronto</option>
+                      <option value="Chicago">Chicago</option>
+
+                  </select>
+                    <div *ngIf="(personalDetailsForm.get('city')?.invalid || personalDetailsForm.get('city')?.touched) && saveDetails" class="text-danger">
+                        <small *ngIf="personalDetailsForm.get('city')?.errors?.['required']">City is required.</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6">
+              <div class="form-group">
+                  <label>State</label>
+                  <select formControlName="state" class="form-select shadow-none">
+                      <option value="">Select</option>
+                      <option value="japan">Japan</option>
+                      <option value="usa">USA</option>
+                      <option value="england">England</option>
+                      <option value="china">China</option>
+                      <option value="canada">Canada</option>
+                      <option value="brazil">Brazil</option>
+                      <option value="south_korea">South Korea</option>
+                      <option value="spain">Spain</option>
+                      <option value="turkey">Turkey</option>
+                      <option value="denmark">Denmark</option>
+                      <option value="thailand">Thailand</option>
+                      <option value="uae">UAE</option>
+                      <option value="australia">Australia</option>
+                      <option value="netherlands">Netherlands</option>
+                      <option value="france">France</option>
+                  </select>
+                  <div *ngIf="(personalDetailsForm.get('city')?.invalid || personalDetailsForm.get('city')?.touched) && saveDetails" class="text-danger">
+                      <small *ngIf="personalDetailsForm.get('city')?.errors?.['required']">City is required.</small>
+                  </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6">
+              <div class="form-group">
+                  <label>Country</label>
+                  <select id="country" class="form-select shadow-none" formControlName="country">
+                    <option value="Japan" selected>Japan</option>
+                    <option value="USA">USA</option>
+                    <option value="England">England</option>
+                    <option value="China">China</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Brazil">Brazil</option>
+                </select>
+                  <div *ngIf="(personalDetailsForm.get('country')?.invalid || personalDetailsForm.get('country')?.touched) && saveDetails" class="text-danger">
+                      <small *ngIf="personalDetailsForm.get('country')?.errors?.['required']">Country is required.</small>
+                  </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6">
+              <div class="form-group">
+                  <label>Latitude</label>
+                  <input type="number" formControlName="lat" class="form-control shadow-none" placeholder="Latitude">
+
+
+                  <div *ngIf="(personalDetailsForm.get('lat')?.invalid || personalDetailsForm.get('lat')?.touched) && saveDetails" class="text-danger">
+                      <small *ngIf="personalDetailsForm.get('lat')?.errors?.['required']">Lat is required.</small>
+                  </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6">
+              <div class="form-group">
+                  <label>Longitude</label>
+                  <input type="number" formControlName="lng" class="form-control shadow-none" placeholder="Longitude">
+
+                  <div *ngIf="(personalDetailsForm.get('lng')?.invalid || personalDetailsForm.get('lng')?.touched) && saveDetails" class="text-danger">
+                      <small *ngIf="personalDetailsForm.get('lng')?.errors?.['required']">Lng is required.</small>
+                  </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6">
+              <div class="form-group">
+                  <label>Offered Salary</label>
+                  <select id="salary" class="form-select shadow-none" formControlName="offered_salary">
+                    <option selected>Select</option>
+                    <option value="$1000">$1000</option>
+                    <option value="$2000">$2000</option>
+                    <option value="$3000">$3000</option>
+                    <option value="$4000">$4000</option>
+                    <option value="$5000">$5000</option>
+                    <option value="$6000">$6000</option>
+                </select>
+
+                  <div *ngIf="(personalDetailsForm.get('offered_salary')?.invalid || personalDetailsForm.get('offered_salary')?.touched) && saveDetails" class="text-danger">
+                      <small *ngIf="personalDetailsForm.get('offered_salary')?.errors?.['required']">Offered Salary is required.</small>
+                  </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6">
+              <div class="form-group">
+                  <label>Experience</label>
+                  <select id="experience" class="form-select shadow-none" formControlName="Experience">
+                    <option selected>Select</option>
+                    <option value="Fresher">Fresher</option>
+                    <option value="1 year">1 year</option>
+                    <option value="2 years">2 years</option>
+                    <option value="3 years">3 years</option>
+                    <option value="4 years">4 years</option>
+                </select>
+                  <div *ngIf="(personalDetailsForm.get('Experience')?.invalid || personalDetailsForm.get('Experience')?.touched) && saveDetails" class="text-danger">
+                      <small *ngIf="personalDetailsForm.get('Experience')?.errors?.['required']">Experience is required.</small>
+                  </div>
+              </div>
+            </div>
+
+
+            <div class="col-lg-6 col-md-6">
+              <div class="form-group">
+                  <label for="Qualification">
+                      Qualification
+                  </label>
+                  <select id="Qualification" class="form-select shadow-none" formControlName="Qualification">
+                      <option selected>Select</option>
+                      <option value="Certificate">Certificate</option>
+                      <option value="Diploma">Diploma</option>
+                      <option value="Bachelor Degree">Bachelor Degree</option>
+                      <option value="Master’s Degree">Master’s Degree</option>
+                      <option value="Associate">Associate</option>
+                  </select>
+                  <div *ngIf="(personalDetailsForm.get('Qualification')?.invalid || personalDetailsForm.get('Qualification')?.touched) && saveDetails" class="text-danger">
+                    <small *ngIf="personalDetailsForm.get('Qualification')?.errors?.['required']">Qualification is required.</small>
+                </div>
+              </div>
+           </div>
+
+            <div class="col-lg-6 col-md-6">
+              <div class="form-group">
+                  <label>Professional Skills </label>
+                  <input type="text" formControlName="Professional_Skills" class="form-control shadow-none" placeholder="Professional Skills">
+
+                  <div *ngIf="(personalDetailsForm.get('Professional_Skills')?.invalid || personalDetailsForm.get('Professional_Skills')?.touched) && saveDetails" class="text-danger">
+                      <small *ngIf="personalDetailsForm.get('Professional_Skills')?.errors?.['required']">Professional Skills is required.</small>
+                  </div>
+              </div>
+            </div>
+
+
+            <div class="col-lg-12 col-md-12">
+              <div class="form-group">
+                  <label>Address details</label>
+                  <textarea formControlName="address" class="form-control shadow-none" cols="30" rows="8"></textarea>
+                  <div *ngIf="(personalDetailsForm.get('address')?.invalid || personalDetailsForm.get('address')?.touched) && saveDetails" class="text-danger">
+                      <small *ngIf="personalDetailsForm.get('address')?.errors?.['required']">Address is required.</small>
+                  </div>
+              </div>
+          </div>
+
+
+
+
+            <div class="col-lg-12 col-md-12">
+                <div class="form-group">
+                    <label>Passion And Future Goals</label>
+                    <textarea formControlName="passion_and_future_goals" class="form-control shadow-none" cols="30" rows="8"></textarea>
+                    <div *ngIf="(personalDetailsForm.get('passion_and_future_goals')?.invalid || personalDetailsForm.get('passion_and_future_goals')?.touched) && saveDetails" class="text-danger">
+                        <small *ngIf="personalDetailsForm.get('passion_and_future_goals')?.errors?.['required']">Passion And Future Goals is required.</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="default-btn" >Save</button>
+    </form>
+</div>
+
+<!-- video form -->
+
+<div class="jove-card">
+  <h3 class="title">Upload Video</h3>
+  <form [formGroup]="videoUploadForm" (ngSubmit)="onSubmitVideo()">
+    <div class="form-group">
+      <label for="video">Upload Video:</label>
+      <input type="file" id="video" formControlName="video" accept="video/*" />
+      <div *ngIf="(videoUploadForm.get('video')?.invalid || videoUploadForm.get('video')?.touched) && saveDetails" class="text-danger">
+        <small *ngIf="videoUploadForm.get('video')?.errors?.['required']">Video is required.</small>
+      </div>
+    </div>
+    <button type="submit" class="default-btn">Save</button>
+  </form>
+
+  <!-- Display uploaded video -->
+  <div *ngIf="candidate_video" class="video-preview">
+    <h3 class="title">Uploaded Video</h3>
+    <div class="video-container">
+      <video controls>
+        <source [src]="candidate_video" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!--CV form-->
+<div class="jove-card">
+  <h3 class="title">CV</h3>
+
+  <form [formGroup]="cvForm" (ngSubmit)="onSubmitResume()">
+    <div class="form-group">
+      <label for="pdfFile">Upload CV:</label>
+      <input type="file" id="resume" formControlName="cv" accept=".pdf" required />
+    </div>
+    <button type="submit" class="default-btn">Save</button>
+  </form>
+  <div *ngIf="pdf" class="pdf-preview">
+    <h3 class="title">Uploaded PDF</h3>
+
+    <div class="download-cv">
+      <a [href]="pdf" target="_blank" class="d-block position-relative" download>
+        <span class="d-block">{{ 'resume_pdf' }}</span>
+        PDF
+        <i class="ri-file-download-line"></i>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+
+
+<!--Education Form-->
+
+<div class="jove-card">
+    <h3 class="title">Education</h3>
+    <form [formGroup]="educationForm" (ngSubmit)="onSubmitEducation()">
+      <div formArrayName="education">
+        <!-- Loop through the education form array -->
+        <div class="row" *ngFor="let educationGroup of education.controls; let i = index" [formGroupName]="i">
+
+          <div class="col-lg-6 col-md-6">
+            <div class="form-group">
+              <label>Degree Name</label>
+              <input type="text" formControlName="degree_name" class="form-control shadow-none">
+              <div *ngIf="educationGroup.get('degree_name')?.invalid && educationGroup.get('degree_name')?.touched" class="text-danger">
+                Degree Name is required.
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-6">
+            <div class="form-group">
+              <label>University Name</label>
+              <input type="text" formControlName="school" class="form-control shadow-none">
+              <div *ngIf="educationGroup.get('school')?.invalid && educationGroup.get('school')?.touched" class="text-danger">
+                University Name is required.
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-6">
+            <div class="form-group">
+              <label>From Year</label>
+              <input type="text" formControlName="start_year" class="form-control shadow-none">
+              <div *ngIf="educationGroup.get('start_year')?.invalid && educationGroup.get('start_year')?.touched" class="text-danger">
+                From Year is required and must be a valid year.
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-6">
+            <div class="form-group">
+              <label>To Year</label>
+              <input type="text" formControlName="end_year" class="form-control shadow-none">
+              <div *ngIf="educationGroup.get('end_year')?.invalid && educationGroup.get('end_year')?.touched" class="text-danger">
+                To Year is required and must be a valid year.
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-6">
+            <div class="form-group">
+              <label>Description</label>
+              <textarea formControlName="description" class="form-control shadow-none" rows="5" style="height: 150px; width: 100%;"></textarea>
+              <div *ngIf="educationGroup.get('description')?.invalid && educationGroup.get('description')?.touched" class="text-danger">
+                Description must be between 10 and 500 characters.
+              </div>
+            </div>
+          </div>
+
+          <!-- Show the delete button only for entries after the first one -->
+          <div class="col-12" *ngIf="i > 0">
+            <button type="button" class="remove-btn" (click)="removeEducationFormGroup(i)">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="display justify-content-between">
+        <button type="submit" class="default-btn" [disabled]="educationForm.invalid">Save</button>
+        <button type="button" class="add-btn" (click)="addEducationFormGroup()">
+          <i class="fa-solid fa-plus add-btn-icon"></i>ADD
+        </button>
+      </div>
+    </form>
+
+</div>
+
+
+
+
+<!--Experience form-->
+
+<div class="jove-card">
+    <h3 class="title">Experience</h3>
+    <form [formGroup]="experienceForm" (ngSubmit)="onSubmitExperience()">
+      <div formArrayName="experience">
+        <!-- Loop through the experience form array -->
+        <div class="row" *ngFor="let experienceGroup of experience.controls; let i = index; track experienceGroup" [formGroupName]="i">
+
+          <div class="col-lg-6 col-md-6">
+            <div class="form-group">
+              <label>Position</label>
+              <input type="text" formControlName="position" class="form-control shadow-none">
+              <div *ngIf="experienceGroup.get('position')?.invalid && experienceGroup.get('position')?.touched" class="text-danger">
+                Position is required.
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-6">
+            <div class="form-group">
+              <label>Company Name</label>
+              <input type="text" formControlName="company_name" class="form-control shadow-none">
+              <div *ngIf="experienceGroup.get('company_name')?.invalid && experienceGroup.get('company_name')?.touched" class="text-danger">
+                Company Name is required.
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-6">
+            <div class="form-group">
+              <label>From Year</label>
+              <input type="text" formControlName="start_year" class="form-control shadow-none">
+              <div *ngIf="experienceGroup.get('start_year')?.invalid && experienceGroup.get('start_year')?.touched" class="text-danger">
+                From Year is required and must be a valid year.
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-6">
+            <div class="form-group">
+              <label>To Year</label>
+              <input type="text" formControlName="end_year" class="form-control shadow-none">
+              <div *ngIf="experienceGroup.get('end_year')?.invalid && experienceGroup.get('end_year')?.touched" class="text-danger">
+                To Year is required and must be a valid year.
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-6">
+            <div class="form-group">
+              <label>Description</label>
+              <textarea formControlName="description" class="form-control shadow-none" rows="5" style="height: 150px; width: 100%;"></textarea>
+              <div *ngIf="experienceGroup.get('description')?.invalid && experienceGroup.get('description')?.touched" class="text-danger">
+                Description must be between 10 and 500 characters.
+              </div>
+            </div>
+          </div>
+
+          <!-- Show the delete button only for entries after the first one -->
+          <div class="col-12" *ngIf="i > 0">
+            <button type="button" class="remove-btn" (click)="removeExperienceFormGroup(i)">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="display justify-content-between">
+        <button type="submit" class="default-btn">Save</button>
+        <button type="button" class="add-btn" (click)="addExperienceFormGroup()">
+          <i class="fa-solid fa-plus add-btn-icon"></i>ADD
+        </button>
+      </div>
+    </form>
+
+</div>

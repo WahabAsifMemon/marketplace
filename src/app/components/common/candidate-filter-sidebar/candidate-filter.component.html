@@ -1,0 +1,148 @@
+<aside class="widget-area">
+  <div class="widget">
+    <h3 class="widget-title fw-semibold">
+        Search by keywords
+    </h3>
+    <form class="search-box position-relative" (submit)="applyFilters($event)">
+        <input type="text" class="input-search" placeholder="Search by first name..." [(ngModel)]="filters.first_name" name="first_name">
+        <button type="submit">
+            <i class="ri-search-line"></i>
+        </button>
+    </form>
+</div>
+
+
+    <div class="widget">
+        <h3 class="widget-title fw-semibold">
+            Experience
+        </h3>
+        <ul class="ps-0 mb-0 list-unstyled">
+            <li>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="experienceOptions" id="fresher" (change)="onExperienceChange($event)">
+                    <label class="form-check-label d-flex align-items-center justify-content-between" for="fresher">
+                        Fresher
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="experienceOptions" id="one-year"  (change)="onExperienceChange($event)">
+                    <label class="form-check-label d-flex align-items-center justify-content-between" for="one-year">
+                        1 year
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="experienceOptions" id="three-years"  (change)="onExperienceChange($event)">
+                    <label class="form-check-label d-flex align-items-center justify-content-between" for="three-years">
+                        3 years
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="experienceOptions" id="five-years"  (change)="onExperienceChange($event)">
+                    <label class="form-check-label d-flex align-items-center justify-content-between" for="five-years">
+                        5 years
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="experienceOptions" id="ten-years"  (change)="onExperienceChange($event)">
+                    <label class="form-check-label d-flex align-items-center justify-content-between" for="ten-years">
+                        10 years
+                    </label>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="widget">
+        <h3 class="widget-title fw-semibold">
+            Qualifications
+        </h3>
+        <ul class="ps-0 mb-0 list-unstyled">
+            <li>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="qualificationsOptions" id="certificate" (change)="onQualificationChange($event)">
+                    <label class="form-check-label d-flex align-items-center justify-content-between" for="certificate">
+                        Certificate
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="qualificationsOptions" id="diploma" (change)="onQualificationChange($event)">
+                    <label class="form-check-label d-flex align-items-center justify-content-between" for="diploma">
+                        Diploma
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="qualificationsOptions" id="bachelor" (change)="onQualificationChange($event)">
+                    <label class="form-check-label d-flex align-items-center justify-content-between" for="bachelor">
+                        Bachelor degree
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="qualificationsOptions" id="masters-degree" (change)="onQualificationChange($event)">
+                    <label class="form-check-label d-flex align-items-center justify-content-between" for="masters-degree">
+                        Master’s degree
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="qualificationsOptions" id="associate" (change)="onQualificationChange($event)">
+                    <label class="form-check-label d-flex align-items-center justify-content-between" for="associate">
+                        Associate
+                    </label>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="widget">
+        <h3 class="widget-title fw-semibold">
+            Gender
+        </h3>
+        <ul class="ps-0 mb-0 list-unstyled">
+            <li>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="genderOptions" id="male" (change)="onGenderChange($event)">
+                    <label class="form-check-label d-flex align-items-center justify-content-between" for="male">
+                        Male
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="genderOptions" id="female" (change)="onGenderChange($event)">
+                    <label class="form-check-label d-flex align-items-center justify-content-between" for="female">
+                        Female
+                    </label>
+                </div>
+            </li>
+
+            <li>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="genderOptions" id="custom" (change)="onGenderChange($event)">
+                    <label class="form-check-label d-flex align-items-center justify-content-between" for="custom">
+                        Custom
+                    </label>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="FiltertBtn">
+      <button type="button" class="default-btn" (click)="applyFilters($event)" style="margin-left: 237px; margin-top: 11px;">
+        Filter
+      </button>
+    </div>
+
+
+</aside>

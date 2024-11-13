@@ -1,0 +1,58 @@
+.loaderMian{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 9;
+    background-color: #0000009c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .loader {
+        width: 100px;
+        height: 40px;
+        --g: radial-gradient(farthest-side,#0000 calc(95% - 3px),#fff calc(100% - 3px) 98%,#0000 101%) no-repeat;
+        background: var(--g), var(--g), var(--g);
+        background-size: 30px 30px;
+        animation: l9 1s infinite alternate;
+      }
+}
+  @keyframes l9 {
+    0% {
+      background-position: 0 50%, 50% 50%, 100% 50%;
+    }
+    20% {
+      background-position: 0 0, 50% 50%, 100% 50%;
+    }
+    40% {
+      background-position: 0 100%, 50% 0, 100% 50%;
+    }
+    60% {
+      background-position: 0 50%, 50% 100%, 100% 0;
+    }
+    80% {
+      background-position: 0 50%, 50% 50%, 100% 100%;
+    }
+    100% {
+      background-position: 0 50%, 50% 50%, 100% 50%;
+    }
+  }
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

@@ -1,0 +1,119 @@
+<app-navbar></app-navbar>
+
+<app-page-banner></app-page-banner>
+
+<!-- Employers Area -->
+<div class="jobs-area ">
+    <div class="main">
+        <div class="row">
+            <div class="col-lg-8 col-md-12">
+              <div class="jove-grid-sorting row align-items-center" *ngIf="filteredEmployers.length > 0">
+                <div class="col-lg-6 col-md-6 result-count">
+                  <p>
+                    Showing <span class="count">{{ (currentPage - 1) * perPage + 1 }} – {{ (currentPage - 1) * perPage + filteredEmployers.length }}</span> of {{ totalEmployers }} results
+                  </p>
+                </div>
+              </div>
+
+              <div class="row justify-content-center" *ngIf="filteredEmployers.length === 0">
+                <div class="col-12 text-center" style="margin-top: 62px;">
+                  <h3>No candidates found matching your filters.</h3>
+                  <p>Try adjusting your search criteria.</p>
+                </div>
+              </div>
+
+                <div class="row">
+                    <div class="col-lg-12"  *ngFor="let employer of filteredEmployers">
+                        <div class="single-employer-box d-sm-flex align-items-center justify-content-between">
+                            <div class="d-sm-flex align-items-center">
+                                <div class="image">
+                                    <img  [src]="employer?.employer_details?.main_logo || 'assets/images/profile-pic.jpg'" alt="company-image">
+                                </div>
+                                <div class="content">
+                                    <h3>
+                                        <a routerLink="/employer-details">
+                                            {{employer?.employer_details?.company_name}}
+                                        </a>
+                                    </h3>
+                                    <span class="location d-block">
+                                      {{employer?.employer_details?.category}}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="jobs-open">
+                                <a  (click)="openEmployereDetail(employer?.id)"  class="d-inline-block">
+                                    Company Detail
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div *ngIf="filteredEmployers.length > 0" class="pagination-area">
+                  <a (click)="changePage(currentPage - 1)" class="next page-numbers" [class.disabled]="currentPage === 1">
+                      <i class="ri-arrow-left-line"></i>
+                  </a>
+
+                  <!-- Show page numbers -->
+                    <ng-container *ngFor="let page of [].constructor(totalPages); let i = index">
+                        <ng-container *ngIf="(i + 1 === currentPage) || (i + 1 >= currentPage - 1 && i + 1 <= currentPage + 1) || (i + 1 === totalPages)">
+                            <a *ngIf="i + 1 !== currentPage; else currentPageTemplate"
+                                (click)="changePage(i + 1)"
+                                class="page-numbers"
+                                [class.active]="currentPage === (i + 1)">
+                                {{ i + 1 }}
+                            </a>
+                            <ng-template #currentPageTemplate>
+                                <span class="page-numbers current" aria-current="page">{{ currentPage }}</span>
+                            </ng-template>
+                        </ng-container>
+                    </ng-container>
+
+                    <a (click)="changePage(currentPage + 1)" class="next page-numbers" [class.disabled]="currentPage === totalPages">
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+                    </div>
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <aside class="sidebar-area">
+                    <h3 class="widget-title fw-semibold">
+                        Search by keywords
+                    </h3>
+                    <form>
+                      <div class="search-box position-relative">
+                          <input type="text" class="input-search" placeholder="Search by company name..." [(ngModel)]="filters.company_name" name="company_name">
+                          <i class="ri-search-line"></i>
+                      </div>
+                      <div class="form-group">
+                          <label>
+                              Category
+                          </label>
+                          <select class="form-select shadow-none" (change)="onCategoryChange($event)">
+                              <option value="" selected>All</option>
+                              <option value="software">Software</option>
+                              <option value="application">Application</option>
+                              <option value="customer">Customer</option>
+                              <option value="design">Design</option>
+                              <option value="others">Others</option>
+                          </select>
+                      </div>
+
+                      <button type="submit" class="default-btn d-block w-100" (click)="applyFilters($event)">
+                          Search
+                      </button>
+                  </form>
+
+                </aside>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <app-subscribe></app-subscribe> -->
+
+<!-- <app-footer></app-footer> -->
+
+<app-custom-footer></app-custom-footer>
+
+<ngx-scrolltop></ngx-scrolltop>

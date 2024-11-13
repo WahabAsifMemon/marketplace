@@ -1,0 +1,636 @@
+// Breadcrumb Title
+.breadcrumb-title {
+    margin-bottom: 2vw;
+
+    h1 {
+        font-size: 1.7vw;
+        font-family: "mon-bold";
+        color: black;
+    }
+}
+
+.pdf-preview {
+  margin-top: 20px;
+}
+
+.pdf-container {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.download-cv a {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: var(--pinkColor);
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.download-cv a:hover {
+  background-color: #d6aab3;
+}
+
+
+.video-preview {
+  margin-top: 20px;
+}
+
+.video-container {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 500px;
+  // margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+
+// Card
+.jove-card {
+    background-color: var(--whiteColor);
+    margin-bottom: 2.2vw;
+    border-radius: 1.1vw;
+    padding: 2.5vw;
+
+    .title {
+        font-size: 1.2vw;
+        font-family: "mon-bold";
+        color: black;
+        margin-bottom: 2vw;
+        border-bottom: 0.1vw solid var(--borderColor);
+        padding-left: 2.5vw;
+        padding-right: 2.5vw;
+        padding-bottom: 0.85vw;
+        margin-left: -2.5vw;
+        margin-right: -2.5vw;
+    }
+
+    /* Form Container (Centering the Save Button) */
+    .form-container {
+        display: flex;
+        /* Use Flexbox for the container */
+        justify-content: center;
+        /* Horizontally center the button */
+        align-items: center;
+        /* Vertically center the button, if needed */
+        height: 100%;
+        /* Adjust based on your layout needs */
+    }
+
+    /* Default Button Styling */
+    .default-btn {
+        font-size: 1vw;
+        /* Font size */
+        font-family: 'mon-bold';
+        /* Font family */
+        background-color: var(--pinkColor);
+        /* Background color */
+        padding: 0.5vw 1.5vw;
+        /* Padding */
+        border: 0;
+        /* Remove default border */
+        border-radius: 0.4vw;
+        /* Border radius */
+        color: var(--whiteColor);
+        /* Text color */
+        transition: var(--transition);
+        /* Transition for hover effect */
+        cursor: pointer;
+        /* Pointer cursor on hover */
+        text-align: center;
+        /* Center text inside button */
+    }
+
+    /* Default Button Hover State */
+    .default-btn:hover {
+        border: 0.1vw solid #3a4e90;
+        /* Border on hover */
+        background-color: transparent;
+        /* Background color on hover */
+        color: #3a4e90;
+        /* Text color on hover */
+    }
+
+    form {
+        .form-group {
+            margin-bottom: 1.5vw;
+
+            label {
+                display: block;
+                margin-bottom: 0.5vw;
+                color: black;
+                font-size: 1vw !important;
+                font-family: "mon-semi" !important;
+            }
+
+            .form-control {
+                height: 3.3vw;
+                padding: 0.8vw 1vw;
+                border-radius: 0.3vw;
+                font-size: 1vw;
+                font-family: "mon-reg";
+                color: var(--headingColor);
+                border: 0.1vw solid #e0e6e9;
+                background-color: #f9fafb;
+                transition: var(--transition);
+            }
+        }
+    }
+
+    .recent-applicants {
+        margin-bottom: -2.2vw;
+    }
+
+    .single-candidate-box {
+        padding: 1.7vw;
+        margin-bottom: 2.2vw;
+        border-radius: 1.1vw;
+        background-color: var(--whiteColor);
+        border: 1px solid var(--borderColor);
+
+        .image {
+            width: 6vw;
+
+            img {
+                width: 100%;
+                height: 6vw;
+                object-fit: cover;
+            }
+        }
+
+        .content {
+            margin-left: 1.1vw;
+
+            h3 {
+                font-size: 1.3vw;
+                margin-bottom: 0.35vw;
+                font-family: 'mon-semi';
+                color: black;
+            }
+
+            .designation {
+                font-size: 1.2vw;
+                margin-bottom: 0.3vw;
+                font-family: 'mon-reg';
+            }
+
+            .location {
+                font-size: 1.1vw;
+                font-family: "mon-reg";
+
+                span {
+                    color: #4086f6;
+                }
+            }
+        }
+
+        .view-profile {
+            font-size: 1vw;
+            font-family: 'mon-bold';
+            color: black;
+
+            span {
+                margin-right: 1vw;
+
+                a {
+                    text-decoration: underline;
+                }
+            }
+
+            ul {
+                li {
+                    margin: {
+                        left: 0.05vw;
+                        right: 0.05vw;
+                    }
+
+                    ;
+
+                    button {
+                        padding: 0;
+                        width: 2.5vw;
+                        height: 2.5vw;
+                        border: none;
+                        cursor: pointer;
+                        font-size: 1.2vw;
+                        position: relative;
+                        color: var(--primaryColor);
+                        background-color: #f5f9fc;
+                        transition: var(--transition);
+
+                        i {
+                            left: 0;
+                            right: 0;
+                            top: 50%;
+                            position: absolute;
+                            transform: translateY(-50%);
+                        }
+
+                        &:hover {
+                            color: var(--whiteColor);
+                            background-color: var(--primaryColor);
+                        }
+                    }
+
+                    &:first-child {
+                        margin-left: 0;
+                    }
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.add-btn,
+.remove-btn {
+    font-size: 1vw;
+    font-family: 'mon-bold';
+    background-color: #3a4e90;
+    padding: 0vw 1vw;
+    border: 0;
+    border-radius: 0.4vw;
+    color: var(--whiteColor);
+    transition: var(--transition);
+
+    &:hover {
+        border: 0.1vw solid #3a4e90;
+        background-color: transparent;
+        color: #3a4e90;
+    }
+
+    .add-btn-icon {
+        font-size: 1.3vw;
+        padding-right: 0.5vw;
+    }
+
+}
+
+.remove-btn {
+    background-color: red;
+    position: absolute;
+    right: 11.5%;
+    padding-top: 0.75vw;
+    padding-bottom: 0.75vw;
+
+    &:hover {
+        border: 0.1vw solid red;
+        color: red;
+    }
+
+    .add-btn-icon {
+        margin-left: 16%;
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    // Breadcrumb Title
+    .breadcrumb-title {
+        h1 {
+            font-size: 20px;
+        }
+    }
+
+    // Card
+    .jove-card {
+        border-radius: 5px;
+        padding: 20px 15px;
+
+        .title {
+            font-size: 16px;
+            margin-bottom: 15px;
+
+            padding: {
+                left: 15px;
+                right: 15px;
+                bottom: 10px;
+            }
+
+            ;
+
+            margin: {
+                left: -15px;
+                right: -15px;
+            }
+
+            ;
+        }
+
+        form {
+            .form-group {
+                margin-bottom: 3vw;
+
+                label{
+                    font-size: 3vw !important;
+                    margin-bottom: 2vw;
+                }
+
+                .form-control {
+                    height: 48px;
+                    font-size: 3vw;
+                    padding: 10px 15px;
+                }
+                .form-select {
+                    height: 48px;
+                    font-size: 3vw;
+                    padding: 10px 15px;
+                    background: {
+                        position: right 18px center;
+                    };
+                }
+                textarea.form-control {
+                    padding-top: 18px;
+                }
+            }
+
+            .default-btn{
+                font-size: 3vw !important;
+            }
+
+            .add-btn{
+                font-size: 3vw;
+                padding: 3vw 4vw;
+                border-radius: 1vw;
+                float: right;
+
+                i{
+                    font-size: 3vw;
+                    margin-right: 1vw;
+                }
+            }
+
+            .remove-btn{
+                right: 29.5%;
+                padding: 3.75vw 4vw;
+                border-radius: 1vw;
+
+                i{
+                    font-size: 3vw;
+                    margin-left: 8%;
+                }
+            }
+        }
+
+        .recent-applicants {
+            margin-bottom: -15px;
+        }
+
+        .single-candidate-box {
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            margin-bottom: 15px;
+
+            .image {
+                margin: {
+                    left: auto;
+                    right: auto;
+                }
+
+                ;
+            }
+
+            .content {
+                margin: {
+                    left: 0;
+                    top: 15px;
+                }
+
+                ;
+
+                h3 {
+                    font-size: 16px;
+                    margin-bottom: 5px;
+                }
+
+                .designation {
+                    margin-bottom: 5px;
+                }
+            }
+
+            .view-profile {
+                span {
+                    margin: {
+                        bottom: 7px;
+                        top: 5px;
+                        right: 0;
+                    }
+
+                    ;
+                }
+
+                ul {
+                    li {
+                        button {
+                            width: 34px;
+                            height: 34px;
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    // Card
+    .jove-card {
+        .single-candidate-box {
+            text-align: start;
+
+            .image {
+                margin: {
+                    left: auto;
+                    right: auto;
+                }
+
+                ;
+            }
+
+            .content {
+                margin: {
+                    left: 15px;
+                    top: 0;
+                }
+
+                ;
+            }
+
+            .view-profile {
+                span {
+                    margin: {
+                        top: 0;
+                        bottom: 0;
+                        right: 10px;
+                    }
+
+                    ;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    // Breadcrumb Title
+    .breadcrumb-title {
+        h1 {
+            font-size: 22px;
+        }
+    }
+
+    // Card
+    .jove-card {
+        border-radius: 10px;
+        padding: 25px;
+
+        .title {
+            font-size: 18px;
+
+            padding: {
+                left: 25px;
+                right: 25px;
+                bottom: 12px;
+            }
+
+            ;
+
+            margin: {
+                left: -25px;
+                right: -25px;
+            }
+
+            ;
+        }
+
+        .single-candidate-box {
+            padding: 20px;
+            border-radius: 10px;
+
+            .content {
+                h3 {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+    // Card
+    .jove-card {
+        padding: 25px;
+
+        .title {
+            padding: {
+                left: 25px;
+                right: 25px;
+            }
+
+            ;
+
+            margin: {
+                left: -25px;
+                right: -25px;
+            }
+
+            ;
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {
+
+    // Card
+    .jove-card {
+        .single-candidate-box {
+            padding: 25px;
+
+            .image {
+                max-width: 100px;
+            }
+
+            .content {
+                margin-left: 18px;
+
+                h3 {
+                    font-size: 18px;
+                }
+            }
+
+            .form-container {
+                display: flex;
+                /* Use Flexbox for the container */
+                justify-content: center;
+                /* Horizontally center the button */
+                align-items: center;
+                /* Vertically center the button, if needed */
+                /* Optional: Set a height if needed to center vertically in a larger area */
+                height: 100%;
+                /* Adjust based on your layout needs */
+            }
+
+            .default-btn {
+                /* Add any additional styling for your button here */
+                padding: 10px 20px;
+                /* Example padding */
+                font-size: 16px;
+                /* Example font size */
+            }
+
+            .view-profile {
+                span {
+                    margin-right: 25px;
+                }
+
+                ul {
+                    li {
+                        margin: {
+                            left: 4px;
+                            right: 4px;
+                        }
+
+                        ;
+
+                        button {
+                            width: 35px;
+                            height: 35px;
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

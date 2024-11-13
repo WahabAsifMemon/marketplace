@@ -1,0 +1,32 @@
+<form class="jobs-search-form" (ngSubmit)="applyFilters()">
+    <div class="display mx-0 align-items-center">
+        
+        <div class="search-input px-0">
+            <div class="form-group position-relative">
+                <i class="ri-search-line"></i>
+                <input type="text"  class="form-control" placeholder="Job title, key words or company" [(ngModel)]="filters.title" name="jobTitle" required>
+            </div>
+        </div>
+
+        <div class="slash"></div>
+
+        <div class="search-input px-0">
+            <div class="form-group position-relative">
+                <i class="ri-map-pin-line"></i>
+                <select class="form-select" [(ngModel)]="filters.city" name="location" required>
+                    <option selected>All Location</option>
+                    <option value="Tokyo, Japan">Tokyo, Japan</option>
+                    <option value="New York, USA">New York, USA</option>
+                    <option value="London, England">London, England</option>
+                    <option value="Beijing, China">Beijing, China</option>
+                    <option value="Toronto, Canada">Toronto, Canada</option>
+                </select>
+            </div>
+        </div>
+        <div class="search-input-btn px-0">
+            <button type="submit" class="default-btn">
+                Find Jobs
+            </button>
+        </div>
+    </div>
+</form>

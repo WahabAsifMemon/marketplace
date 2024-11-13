@@ -1,0 +1,36 @@
+<section>
+    <div class="reset-card">
+        <div class="image">
+            <i class="fa-regular fa-envelope"></i>
+        </div>
+        <h1>Password Reset?</h1>
+        <p>We sent a code to {{ email }}</p> <!-- Dynamically display the email -->
+
+        <form (ngSubmit)="verifyOTP()">
+            <div class="form-group">
+                <input #otpInput type="tel" maxlength="1" class="form-control shadow-none otp-input" required (input)="onInputChange($event, 0)"
+                    (keydown)="onKeyDown($event, 0)">
+                <input #otpInput type="tel" maxlength="1" class="form-control shadow-none otp-input" required (input)="onInputChange($event, 1)"
+                    (keydown)="onKeyDown($event, 1)">
+                <input #otpInput type="tel" maxlength="1" class="form-control shadow-none otp-input" required (input)="onInputChange($event, 2)"
+                    (keydown)="onKeyDown($event, 2)">
+                <input #otpInput type="tel" maxlength="1" class="form-control shadow-none otp-input" required (input)="onInputChange($event, 3)"
+                    (keydown)="onKeyDown($event, 3)">
+            </div>
+
+            <button class="default-btn" type="submit">Continue</button> <!-- Replaced routerLink with type="submit" -->
+        </form>
+
+        <div class="recieving d-flex">
+            <p>Didn't receive the code?</p>
+            <a href="/reset-pass">Click Here</a>
+        </div>
+
+        <div class="back-login">
+            <a href="/">
+                <i class="fa-solid fa-arrow-left"></i>
+                Back to Login
+            </a>
+        </div>
+    </div>
+</section>
