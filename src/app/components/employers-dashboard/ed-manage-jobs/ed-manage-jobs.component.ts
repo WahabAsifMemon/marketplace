@@ -62,8 +62,8 @@ export class EdManageJobsComponent {
         text: 'You won\'t be able to revert this!',
         icon: 'warning',
         showCancelButton: true,
-        confirmButtonColor: '#c78b97',
-        cancelButtonColor: '#3a4e90',
+        confirmButtonColor: '#1eabfc',
+        cancelButtonColor: '#1eabfc',
         confirmButtonText: 'Yes, delete it!'
       });
 

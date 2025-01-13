@@ -97,12 +97,15 @@ import { ResetEmailSendComponent } from './components/forget-pass/reset-email-se
 import { ResetPassComponent } from './components/forget-pass/reset-pass/reset-pass.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { CandidateFilterComponent } from './components/common/candidate-filter-sidebar/candidate-filter.component';
+import { CommunityComponent } from './components/common/community/community.component';
+import { CommunityPageComponent } from './components/pages/community-page/community-page.component';
 
 
 
 @NgModule({
     declarations: [
         AppComponent,
+        CommunityPageComponent,
         HomeDemoOneComponent,
         HomeDemoTwoComponent,
         HomeDemoThreeComponent,
@@ -122,7 +125,6 @@ import { CandidateFilterComponent } from './components/common/candidate-filter-s
         DownloadAppComponent,
         SubscribeComponent,
         FooterComponent,
-        NavbarComponent,
         HometwoBannerComponent,
         TalentedExpertsComponent,
         WhyChooseUsComponent,
@@ -175,8 +177,7 @@ import { CandidateFilterComponent } from './components/common/candidate-filter-s
         CdFooterComponent,
         CdHeaderComponent,
         NavbarComponent,
-        HomeComponent,
-        
+        HomeComponent,  
         SearchBarComponent,
         LogoSliderComponent,
         CustomFooterComponent,
@@ -187,11 +188,12 @@ import { CandidateFilterComponent } from './components/common/candidate-filter-s
         CdEditAccountComponent,
         ResetOtpComponent,
         ResetEmailSendComponent,
-        ResetPassComponent
+        ResetPassComponent,
 
     ],
     imports: [
         BrowserModule,
+        CommunityComponent,
         CarouselModule,
         AppRoutingModule,
         NgxScrollTopModule,

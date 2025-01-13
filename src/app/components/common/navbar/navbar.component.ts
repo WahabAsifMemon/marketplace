@@ -44,4 +44,12 @@ export class NavbarComponent implements OnInit {
   openPopup(): void {
     this.authPopup.openPopup();
   }
+
+  logout() {
+    localStorage.clear();
+      window.location.reload();
+  }
+  get accessTokenExists(): boolean {
+    return !!localStorage.getItem('token');
+  }
 }

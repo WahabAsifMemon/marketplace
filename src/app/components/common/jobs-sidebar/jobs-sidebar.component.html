@@ -18,7 +18,7 @@
             Job type
         </h3>
         <ul class="ps-0 mb-0 list-unstyled">
-            <li>
+            <!-- <li>
                 <div class="form-check">
                     <input type="radio" class="form-check-input" name="jobTypeOptions"  id="all">
                     <label class="form-check-label d-flex align-items-center justify-content-between" for="all">
@@ -33,7 +33,7 @@
                         Full time 
                     </label>
                 </div>
-            </li>
+            </li> -->
             <li>
                 <div class="form-check">
                     <input type="radio" class="form-check-input" name="jobTypeOptions" (change)="onJobTypeChange($event)" id="Park Time">
@@ -43,15 +43,15 @@
                 </div>
             </li>
 
-            <li>
+            <!-- <li>
                 <div class="form-check">
                     <input type="radio" class="form-check-input" name="jobTypeOptions" id="Contract" (change)="onJobTypeChange($event)">
                     <label class="form-check-label d-flex align-items-center justify-content-between" for="Contract">
                         Contract 
                     </label>
                 </div>
-            </li>
-            <li>
+            </li> -->
+            <!-- <li>
                 <div class="form-check">
                     <input type="radio" class="form-check-input" name="jobTypeOptions" id="Internship" (change)="onJobTypeChange($event)">
                     <label class="form-check-label d-flex align-items-center justify-content-between" for="Internship">
@@ -66,7 +66,7 @@
                         Freelancer 
                     </label>
                 </div>
-            </li>
+            </li> -->
         </ul>
     </div>
     <!-- <div class="widget">
@@ -145,7 +145,7 @@
             Career level
         </h3>
         <ul class="ps-0 mb-0 list-unstyled">
-            <li>
+            <!-- <li>
                 <div class="form-check">
                     <input type="radio" class="form-check-input" name="careerLevelOptions"  (change)="onCareerChange($event)"  id="manager">
                     <label class="form-check-label d-flex align-items-center justify-content-between" for="manager">
@@ -160,7 +160,7 @@
                         Officer
                     </label>
                 </div>
-            </li>
+            </li> -->
             <li>
                 <div class="form-check">
                     <input type="radio" class="form-check-input" name="careerLevelOptions" (change)="onCareerChange($event)"  id="student">
@@ -169,22 +169,22 @@
                     </label>
                 </div>
             </li>
-            <li>
+            <!-- <li>
                 <div class="form-check">
                     <input type="radio" class="form-check-input" name="careerLevelOptions" (change)="onCareerChange($event)" id="executive">
                     <label class="form-check-label d-flex align-items-center justify-content-between" for="executive">
                         Executive
                     </label>
                 </div>
-            </li>
-            <li>
+            </li> -->
+            <!-- <li>
                 <div class="form-check">
                     <input type="radio" class="form-check-input" name="careerLevelOptions"  (change)="onCareerChange($event)" id="others">
                     <label class="form-check-label d-flex align-items-center justify-content-between" for="others">
                         Others
                     </label>
                 </div>
-            </li>
+            </li> -->
         </ul>
     </div>
     <div class="widget">
@@ -192,7 +192,7 @@
             Experience
         </h3>
         <ul class="ps-0 mb-0 list-unstyled">
-            <li>
+            <!-- <li>
                 <div class="form-check">
                     <input type="radio" class="form-check-input" name="experienceOptions" id="fresher" (change)="onExperienceChange($event)">
                     <label class="form-check-label d-flex align-items-center justify-content-between" for="fresher">
@@ -207,12 +207,20 @@
                         1 year
                     </label>
                 </div>
-            </li>
+            </li> -->
             <li>
                 <div class="form-check">
                     <input type="radio" class="form-check-input" name="experienceOptions" id="three-years"  (change)="onExperienceChange($event)">
                     <label class="form-check-label d-flex align-items-center justify-content-between" for="three-years">
                         3 years
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="experienceOptions" id="four-years"  (change)="onExperienceChange($event)">
+                    <label class="form-check-label d-flex align-items-center justify-content-between" for="four-years">
+                    4 years
                     </label>
                 </div>
             </li>
@@ -281,7 +289,7 @@
             </li>
         </ul>
     </div>
-    <div class="widget">
+    <!-- <div class="widget">
         <h3 class="widget-title fw-semibold">
             Gender
         </h3>
@@ -312,7 +320,7 @@
                 </div>
             </li>
         </ul>
-    </div>
+    </div> -->
     <div class="FiltertBtn">
       <button type="button" class="default-btn" (click)="applyFilters()" style="margin-left: 237px; margin-top: 11px;">
         Filter

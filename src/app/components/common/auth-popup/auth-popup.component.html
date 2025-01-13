@@ -63,7 +63,7 @@
                                     Employer
                                 </button>
                             </li>
-                        </ul>
+                        </ul>   
 
                         <div class="tab-content">
 
@@ -137,6 +137,58 @@
                                             <small *ngIf="CandidateloginForm.get('password')?.errors?.['required']">Password is required.</small>
                                         </div>
                                     </div>
+
+                                    <div class="form-group">
+                                        <label>Student Permit Image</label>
+                                        <input
+                                          type="file"
+                                          class="form-control shadow-none"
+                                          (change)="onImageSelected($event, 'permit_image')"
+                                          accept="image/*"
+                                        />
+                                        <div
+                                          *ngIf="
+                                            CandidateloginForm.get('permit_image')?.invalid &&
+                                            RegisterCandidate
+                                          "
+                                          class="text-danger"
+                                        >
+                                          <small
+                                            *ngIf="
+                                              CandidateloginForm.get('permit_image')?.errors?.['required']
+                                            "
+                                          >
+                                            Permit image is required.
+                                          </small>
+                                        </div>
+                                      </div>
+                                      
+                                      <div class="form-group">
+                                        <label>Proof Of Enrollment Image</label>
+                                        <input
+                                          type="file"
+                                          class="form-control shadow-none"
+                                          (change)="onImageSelected($event, 'id_proof_image')"
+                                          accept="image/*"
+                                        />
+                                        <div
+                                          *ngIf="
+                                            CandidateloginForm.get('id_proof_image')?.invalid &&
+                                            RegisterCandidate
+                                          "
+                                          class="text-danger"
+                                        >
+                                          <small
+                                            *ngIf="
+                                              CandidateloginForm.get('id_proof_image')?.errors?.['required']
+                                            "
+                                          >
+                                            ID proof image is required.
+                                          </small>
+                                        </div>
+                                      </div>
+                                      
+
                                     <div class="form-check">
                                         <input class="form-check-input shadow-none" type="checkbox"
                                             id="termsPrivacyPolicy">
@@ -145,7 +197,7 @@
                                                 Policy</a>
                                         </label>
                                     </div>
-                                    <button type="submit" class="default-btn d-block w-100">
+                                    <button type="submit"  [disabled]="!CandidateloginForm.valid" class="default-btn d-block w-100">
                                         Register Now
                                     </button>
 
@@ -226,15 +278,16 @@
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input shadow-none" type="checkbox"
-                                            id="termsPrivacyPolicy">
+                                            id="termsPrivacyPolicy" [(ngModel)]="isAgreed">
                                         <label class="form-check-label" for="termsPrivacyPolicy">
-                                            Accept the <a routerLink="/">Terms</a> and <a routerLink="/">Privacy
-                                                Policy</a>
+                                            Accept the <a routerLink="/">Terms</a> and <a routerLink="/">Privacy Policy</a>
                                         </label>
                                     </div>
-                                    <button type="submit" class="default-btn d-block w-100">
+                                    
+                                    <button type="submit" class="default-btn d-block w-100" >
                                         Register Now
                                     </button>
+                                    
                                 </form>
                             </div>
                         </div>

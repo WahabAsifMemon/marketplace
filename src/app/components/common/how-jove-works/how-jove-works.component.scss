@@ -56,7 +56,7 @@
 
             .number {
                 color: var(--whiteColor);
-                background-color: #3a4e90;
+                background-color: #1eabfc;
             }
 
             h3 {
@@ -73,7 +73,7 @@
 
             &:hover {
                 .icon {
-                    background-color: #3a4e90;
+                    background-color: #1eabfc;
                 }
             }
         }
@@ -107,7 +107,7 @@
         line-height: 3.5vw;
         border-radius: 50%;
         color: var(--whiteColor);
-        background-color: #3a4e90;
+        background-color: #1eabfc;
 
         margin: {
             left: auto;
@@ -144,7 +144,7 @@
 
     &:hover {
         .icon {
-            border-color: #3a4e90;
+            border-color: #1eabfc;
         }
     }
 }

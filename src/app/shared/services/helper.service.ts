@@ -47,31 +47,65 @@ export class HelperService {
   }
 
 
+  // fileUploadHttp(event: any): Promise<any> {
+  //   LoaderService.loader.next(true);
+  //   return new Promise((resolve, reject) => {
+  //     const formData = new FormData();
+  //     const files = event.target.files;
+  //     if(files){
+  //       if (files.length > 10) {
+  //         LoaderService.loader.next(false);
+  //           reject("Upto 10 files can be uploaded");
+  //       }
+  //       if (files.length > 0) {
+  //         for (let i = 0; i < files.length; i++) {
+  //           formData.append('images', files[i]);
+  //         }
+  //       } else {
+  //         formData.append('images', files[0]);
+  //       }
+  //     }
+  //       console.log(files)
+  //     this.http
+  //       .postMedia(
+  //         'file/upload',
+  //         formData,
+  //         true,
+  //       )
+  //       .subscribe(
+  //         (response: any) => {
+  //           this.toastr.success('File Uploaded Successfully');
+  //           LoaderService.loader.next(false);
+  //           resolve(response); // Assuming the response contains imageUrls
+  //         },
+  //         (error) => {
+  //           LoaderService.loader.next(false);
+  //           reject(error);
+  //         }
+  //       );
+  //   });
+  // }
+
   fileUploadHttp(event: any): Promise<any> {
     LoaderService.loader.next(true);
     return new Promise((resolve, reject) => {
       const formData = new FormData();
-      const files = event.target.files;
-      if(files){
+      const files = event; // `event` should already be the files object
+      if (files) {
         if (files.length > 10) {
           LoaderService.loader.next(false);
-            reject("Upto 10 files can be uploaded");
+          reject("Upto 10 files can be uploaded");
         }
         if (files.length > 0) {
           for (let i = 0; i < files.length; i++) {
             formData.append('images', files[i]);
           }
-        } else {
-          formData.append('images', files[0]);
         }
       }
-        console.log(files)
+  
+      console.log(files);
       this.http
-        .postMedia(
-          'file/upload',
-          formData,
-          true,
-        )
+        .postMedia('file/upload', formData, true)
         .subscribe(
           (response: any) => {
             this.toastr.success('File Uploaded Successfully');
@@ -85,6 +119,7 @@ export class HelperService {
         );
     });
   }
+  
 
 
   pdfUploadHttp(files: FileList): Promise<any> {

@@ -49,6 +49,8 @@ import { AuthGuard } from './shared/services/auth.guard';
 import { ResetEmailSendComponent } from './components/forget-pass/reset-email-send/reset-email-send.component';
 import { ResetOtpComponent } from './components/forget-pass/reset-otp/reset-otp.component';
 import { ResetPassComponent } from './components/forget-pass/reset-pass/reset-pass.component';
+import { CommunityComponent } from './components/common/community/community.component';
+import { CommunityPageComponent } from './components/pages/community-page/community-page.component';
 
 const routes: Routes = [
     // {path: '', component: HomeDemoOneComponent},
@@ -80,6 +82,10 @@ const routes: Routes = [
     {path: 'reset-pass', component: ResetEmailSendComponent},
     {path: 'reset-otp', component: ResetOtpComponent},
     {path: 'reset-new-pass', component: ResetPassComponent},
+    {path: 'community', component: CommunityPageComponent, 
+        canActivate: [AuthGuard],
+    },
+
     {
         path: 'dashboard',
         component: EmployersDashboardComponent,

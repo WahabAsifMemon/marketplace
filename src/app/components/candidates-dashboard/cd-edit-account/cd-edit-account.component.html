@@ -90,6 +90,33 @@
                 </div>
             </div>
 
+                    <!-- Student Permit Image -->
+                    <div class="col-lg-6 col-md-6">
+                        <div class="form-group">
+                          <label>Student Permit</label>
+                          <div *ngIf="permitImageUrl">
+                            <!-- Display newly uploaded image or existing one -->
+                            <img [src]="permitImageUrl" alt="Student Permit" class="img-fluid">
+                          </div>
+                          <input type="file" class="form-control shadow-none" (change)="onImageChange($event, 'permit_image')">
+                        </div>
+                      </div>
+                      
+
+            <!-- ID Proof Image -->
+            <div class="col-lg-6 col-md-6">
+                <div class="form-group">
+                    <label>Id Proof</label>
+                    <div *ngIf="idProofImageUrl">
+                        <!-- Display newly uploaded image or existing one -->
+                        <img [src]="idProofImageUrl" alt="ID Proof" class="img-fluid">
+                    </div>
+                    <input type="file" class="form-control shadow-none" (change)="onImageChange($event, 'id_proof_image')">
+                </div>
+            </div>
+
+
+
 
         </div>
         <button type="submit" class="default-btn" (click)="candidateupdate()">

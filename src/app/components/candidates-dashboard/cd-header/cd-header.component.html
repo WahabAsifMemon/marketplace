@@ -142,6 +142,8 @@
                                 </li>
                             </ul>
                         </li>
+
+
                     </ul>
 
 
@@ -154,7 +156,7 @@
                             Login/Register
                         </span>
                     </div> -->
-                    <div class="option-item">
+                    <div class="option-item" *ngIf="accessTokenExists">
                         <a (click)="logout()" style="cursor: pointer;" class="default-btn">
                             Logout
                         </a>

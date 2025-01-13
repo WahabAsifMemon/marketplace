@@ -2,6 +2,7 @@ import { Component, HostListener } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { HelperService } from 'src/app/shared/services/helper.service';
 import { HttpService } from 'src/app/shared/services/http.service';
 
 @Component({
@@ -20,6 +21,8 @@ export class AuthPopupComponent {
   LoginEmployee: boolean=false;
 
   isFormValid: boolean = false;
+  public isAgreed: boolean = false;
+
 
   // Navbar Sticky
   isSticky: boolean = false;
@@ -32,6 +35,7 @@ export class AuthPopupComponent {
   constructor(
     private router: Router,
     private http: HttpService,
+    private helper: HelperService,
     private fb: FormBuilder,
     private toastr: ToastrService,
   ) {
@@ -43,6 +47,8 @@ export class AuthPopupComponent {
       phone_number: [null, [Validators.required]],
       password: [null, [Validators.required]],
       role: ['candidate', [Validators.required]],
+      permit_image: [null, Validators.required], // New
+      id_proof_image: [null, Validators.required], // New
     });
 
     this.CandidateloginForm.valueChanges.subscribe(() => {
@@ -83,16 +89,17 @@ export class AuthPopupComponent {
   // Tabs 1
   currentTab = 'tab1';
   switchTab(event: MouseEvent, tab: string) {
-    event.preventDefault();
-    this.currentTab = tab;
+      event.preventDefault();
+      this.currentTab = tab;
   }
 
   // Tabs 2
   currentInnerTab = 'innerTab1';
   switchInnerTab(event: MouseEvent, tab: string) {
-    event.preventDefault();
-    this.currentInnerTab = tab;
+      event.preventDefault();
+      this.currentInnerTab = tab;
   }
+
 
   // Modal Popup
   isOpen = false;
@@ -111,7 +118,14 @@ export class AuthPopupComponent {
         const formData = this.CandidateloginForm.value;
         this.http.post('auth/signup', formData, false).subscribe(
             (res: any) => {
-                this.currentTab = 'tab1';  // Switch to the login tab
+              const userId = res.user.id; // Extract user id from response
+              const role = res.user.role; // Extract user id from response
+      
+              localStorage.setItem('user_id',  userId );
+              localStorage.setItem('role',  role );
+      
+              this.currentTab = 'tab1'
+              this.router.navigate(['/pricing']);  // Navigate to the pricing page // Switch to the login tab
             },
             (error: any) => {
               console.log('error');
@@ -122,7 +136,7 @@ export class AuthPopupComponent {
       console.log('error');
 
     }
-}
+  }
 
 
 createEmployerAccount() {
@@ -133,7 +147,11 @@ createEmployerAccount() {
     this.http.post('auth/signup', formData, false).subscribe(
       (res: any) => {
         const userId = res.user.id; // Extract user id from response
+        const role = res.user.role; // Extract user id from response
+
         localStorage.setItem('user_id',  userId );
+        localStorage.setItem('role',  role );
+
         this.currentTab = 'tab1'
         this.router.navigate(['/pricing']);  // Navigate to the pricing page
       },
@@ -175,6 +193,7 @@ createEmployerAccount() {
         localStorage.setItem('token', res?.token);
         localStorage.setItem('role', res?.role);
         localStorage.setItem('active_status', res?.user?.active_status);
+        localStorage.setItem('first_name', res?.user?.first_name);
         localStorage.setItem('user_id', res?.user?.id);
 
         if (res?.user?.active_status === "0") {
@@ -214,5 +233,48 @@ createEmployerAccount() {
   //   );
   // }
 
+  onImageSelected(event: any, controlName: string) {
+    const files = event.target.files;
+  
+    if (files && files.length > 0) {
+      this.fileUploadHttp(files)
+        .then((result: any) => {
+          // Patch the specific control with the uploaded file URL
+          this.CandidateloginForm.patchValue({
+            [controlName]: result?.fileUrls?.[0],
+          });
+          console.log(`${controlName} uploaded:`, result?.fileUrls?.[0]);
+        })
+        .catch((error) => {
+          console.error(`Error uploading ${controlName}:`, error);
+        });
+    }
+  }
 
+  fileUploadHttp(files: FileList): Promise<any> {
+    const formData = new FormData();
+    Array.from(files).forEach((file) => formData.append('images', file));
+  
+    return new Promise((resolve, reject) => {
+      this.http.postMedia('file/upload_files', formData, true).subscribe(
+        (response: any) => {
+          this.toastr.success('File Uploaded Successfully');
+          resolve(response); // Assume response contains 'fileUrls'
+        },
+        (error) => {
+          this.toastr.error('File Upload Failed');
+          reject(error);
+        }
+      );
+
+      setTimeout(() => {
+        resolve({ fileUrls: ['https://res.cloudinary.com/dse9wrsjz/image/upload/filename.jpg'] }); // Mock response
+      }, 1000);
+    });
+  }
+  
+  
 }
+
+
+

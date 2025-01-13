@@ -61,7 +61,7 @@
                         Specialisms
                     </label>
                     <select id="specialism" class="form-select shadow-none" formControlName="specialism">
-                        <option selected>Category</option>
+                        <option disabled>Category</option>
                         <option value="Engineering">Engineering</option>
                         <option value="Banking">Banking</option>
                         <option value="Beauty Care">Beauty Care</option>
@@ -77,9 +77,9 @@
 
             <div class="col-lg-4 col-md-4">
               <div class="form-group">
-                  <label for="category_id">Category Id</label>
+                  <label for="category_id">Category</label>
                   <select id="category_id" class="form-select shadow-none" formControlName="category_id">
-                      <option value="" disabled selected>Select</option>
+                      <option value="" disabled disabled>Select</option>
                       <option *ngFor="let category of categories" [value]="category.id">
                           {{ category.title }}
                       </option>
@@ -98,12 +98,9 @@
                         Job type
                     </label>
                     <select  id="jobType" class="form-select shadow-none" formControlName="jobType">
-                        <option selected>Select</option>
-                        <option value="Full Time">Full Time</option>
+                        <option disabled>Select</option>
+                        <option value="No Experience">No Experience</option>
                         <option value="Part Time">Part Time</option>
-                        <option value="Contract">Contract</option>
-                        <option value="Internship">Internship</option>
-                        <option value="Freelancer">Freelancer</option>
                     </select>
                     <div *ngIf="(postJobForm.get('jobType')?.touched || postJobForm.get('jobType')?.invalid) && next">
                         <small *ngIf="(postJobForm.get('jobType')?.errors?.['required'] && postJobForm.get('jobType')?.errors?.['invalidDropdown'])" class="text-danger">Please select a valid job type.</small>
@@ -116,7 +113,7 @@
                         Offered salary (monthly)
                     </label>
                     <select id="salary" class="form-select shadow-none" formControlName="salary">
-                        <option selected>Select</option>
+                        <option disabled>Select</option>
                         <option value="$1000">$1000</option>
                         <option value="$2000">$2000</option>
                         <option value="$3000">$3000</option>
@@ -135,7 +132,7 @@
                         Career level
                     </label>
                     <select id="careerLevel" class="form-select shadow-none" formControlName="careerLevel">
-                        <option selected>Select</option>
+                        <option disabled>Select</option>
                         <option value="manager">Manager</option>
                         <option value="officer">Officer</option>
                         <option value="student">Student</option>
@@ -153,12 +150,14 @@
                         Experience
                     </label>
                     <select id="experience" class="form-select shadow-none" formControlName="experience">
-                        <option selected>Select</option>
+                        <option disabled>Select</option>
                         <option value="Fresher">Fresher</option>
-                        <option value="1 year">1 year</option>
-                        <option value="2 years">2 years</option>
                         <option value="3 years">3 years</option>
                         <option value="4 years">4 years</option>
+                        <option value="5 years">5 years</option>
+                        <option value="10 years">10 years</option>
+
+
                     </select>
                     <div *ngIf="(postJobForm.get('experience')?.touched || postJobForm.get('experience')?.invalid) && next">
                         <small *ngIf="(postJobForm.get('experience')?.errors?.['required'] && postJobForm.get('experience')?.errors?.['invalidDropdown'])" class="text-danger">Please select experience.</small>
@@ -171,7 +170,7 @@
                         Gender
                     </label>
                     <select id="gender" class="form-select shadow-none" formControlName="gender" >
-                        <option selected>Select</option>
+                        <option disabled>Select</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                         <option value="Custom">Custom</option>
@@ -187,7 +186,7 @@
                         Industry
                     </label>
                     <select id="industry" class="form-select shadow-none" formControlName="industry">
-                        <option selected>Select</option>
+                        <option disabled>Select</option>
                         <option value="Engineering">Engineering</option>
                         <option value="Banking">Banking</option>
                         <option value="Beauty Care">Beauty Care</option>
@@ -206,7 +205,7 @@
                         Qualification
                     </label>
                     <select id="qualification" class="form-select shadow-none" formControlName="qualification">
-                        <option selected>Select</option>
+                        <option disabled>Select</option>
                         <option value="Certificate">Certificate</option>
                         <option value="Diploma">Diploma</option>
                         <option value="Bachelor Degree">Bachelor Degree</option>
@@ -237,7 +236,6 @@
                         Country
                     </label>
                     <select id="country" class="form-select shadow-none" formControlName="country">
-                        <option value="Japan" selected>Japan</option>
                         <option value="USA">USA</option>
                         <option value="England">England</option>
                         <option value="China">China</option>
@@ -255,7 +253,7 @@
                         City
                     </label>
                     <select id="city" class="form-select shadow-none" formControlName="city">
-                        <option value="Tokyo" selected>Tokyo</option>
+                        <option value="Tokyo">Tokyo</option>
                         <option value="New York">New York</option>
                         <option value="London">London</option>
                         <option value="Beijing">Beijing</option>

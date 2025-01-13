@@ -8,7 +8,7 @@
 :root {
     --fontFamily: 'Lato', sans-serif;
     --headingFontFamily: 'Montserrat', sans-serif;
-    --primaryColor: rgb(199 139 151);
+    --primaryColor: rgb(237, 140, 5);
     --secondaryColor: #fdc56b;
     --headingColor: #404145;
     --bodyColor: #62646A;
@@ -18,9 +18,9 @@
     --fontSize: 16px;
 
     --black: 404145;
-    --pinkColor: #c78b97;
-    --blueColor: #1f3163;
-    --tabColor: #3b4e90;
+    --pinkColor: #1eabfc;
+    --blueColor: #ed8c05;
+    --tabColor: #ed8c05;
     --darkBlue: #290164;
 
 }
@@ -325,7 +325,7 @@ img {
 
         &.current,
         &:hover {
-            background-color: #3b4e90;
+            background-color: #1eabfc;
             border-color: var(--primaryColor);
             color: var(--whiteColor);
         }

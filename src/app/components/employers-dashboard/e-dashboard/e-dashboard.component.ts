@@ -62,7 +62,7 @@ export class EDashboardComponent {
                 enabled: false
             },
             colors: [
-                "#3a4e90"
+                "#1eabfc"
             ],
             stroke: {
                 curve: "straight"

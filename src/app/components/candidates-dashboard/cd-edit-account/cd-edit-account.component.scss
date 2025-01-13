@@ -169,4 +169,24 @@
         }
     }
 
+
+    .image-preview {
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px dashed #ccc;
+        padding: 10px;
+        background-color: #f8f8f8;
+    }
+    
+    .preview-image {
+        max-width: 100%;
+        max-height: 150px; /* Ensures images are not too large */
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+
 }

@@ -10,6 +10,8 @@ import { HttpService } from 'src/app/shared/services/http.service';
 })
 export class PricingComponent {
   public subscriptionForm: FormGroup;
+  public role: string | null = null;
+
 
   constructor(
     private router: Router,
@@ -19,6 +21,11 @@ export class PricingComponent {
     this.subscriptionForm = this.fb.group({
       plan: [null, [Validators.required]],
     });
+  }
+
+  ngOnInit(): void {
+    // Retrieve user type from local storage (or from API if needed)
+    this.role = localStorage.getItem('role');
   }
 
   // Function to handle subscription buying
@@ -38,6 +45,7 @@ export class PricingComponent {
 
               // Set active status to 1 in local storage
               localStorage.setItem('active_status', '1');
+              localStorage.removeItem('role');
             }
           },
           (error: any) => {

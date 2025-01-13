@@ -56,7 +56,7 @@ h2 {
 
 
 .cover-img {
-  background: linear-gradient(to right, #00001e, #516dc0);
+  background: linear-gradient(to right, #ed8c05, #1eabfc);
   padding: 0 4vw 0 8vw;
 }
 
@@ -175,113 +175,120 @@ h2 {
   border-radius: 5px;
 }
 
-.content-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 3.2vw;
-}
+// .content-container {
+//   display: flex;
+//   justify-content: center;
+//   margin-top: 3.2vw;
+// }
 
-.content {
-  width: 100%;
-  padding: 20px;
-  background-color: #f9f9f9;
-  text-align: center;
-}
+// .content {
+//   width: 100%;
+//   padding: 20px;
+//   background-color: #f9f9f9;
+//   text-align: center;
+// }
 
-.card-container {
-  width: 100%;
-  flex-wrap: wrap;
-}
+// .card-container {
+//   width: 100%;
+//   flex-wrap: wrap;
+// }
 
-.card {
-  width: 31%;
-  margin-right: 3.33%;
-  padding: 3.6vw 3vw;
-  border: 2.8px solid black;
-  border-radius: 0.85vw;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  margin-bottom: 3.5vw;
-  position: relative;
+// .card {
+//   width: 31%;
+//   margin-right: 3.33%;
+//   padding: 3.6vw 3vw;
+//   border: 2.8px solid black;
+//   border-radius: 0.85vw;
+//   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+//   margin-bottom: 3.5vw;
+//   position: relative;
 
-}
+// }
 
 
 .bookmark-icon {
-  position: absolute;
-  top: 21px;
-  margin-right: 12px;
-  right: 10px;
-  font-size: 24px;
-  // color: #c78b97; 
+  position: relative;
+  border: 2px solid; 
+  border-radius: 50%; 
+  width: 40px; /* Adjust width */
+  height: 40px; /* Adjust height */
+  top: 3px;
+  margin-right: 32px;
+  font-size: 24px; /* Adjust font size if needed */
+  display: inline-flex; /* Align content properly */
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
 }
+
+
 
 .bookmark-icon.bookmarked {
-  color: #c78b97; 
+  color: #1eabfc; 
 }
 
-.card:nth-child(3n) {
-  margin-right: 0;
-}
+// .card:nth-child(3n) {
+//   margin-right: 0;
+// }
 
-.card img {
-  width: 5.5vw;
-  height: 5.5vw;
-  object-fit: cover;
-}
+// .card img {
+//   width: 5.5vw;
+//   height: 5.5vw;
+//   object-fit: cover;
+// }
 
-.img-content {
-  align-items: center;
-}
+// .img-content {
+//   align-items: center;
+// }
 
-.head-para {
-  width: 57%;
-}
+// .head-para {
+//   width: 57%;
+// }
 
-.main-head {
-  font-size: 0.91vw;
-  font-family: "mon-black";
-  color: var(--black);
-  letter-spacing: -.2px;
-}
+// .main-head {
+//   font-size: 0.91vw;
+//   font-family: "mon-black";
+//   color: var(--black);
+//   letter-spacing: -.2px;
+// }
 
-.head-para .para {
-  font-size: 0.93vw;
-  font-family: 'mon-reg';
-  color: var(--black);
-}
+// .head-para .para {
+//   font-size: 0.93vw;
+//   font-family: 'mon-reg';
+//   color: var(--black);
+// }
 
-.card-heading {
-  font-size: 1.5vw;
-  font-family: "mon-extra";
-  color: var(--black);
-  margin-top: 0.6vw;
-  letter-spacing: -.8px;
-}
+// .card-heading {
+//   font-size: 1.5vw;
+//   font-family: "mon-extra";
+//   color: var(--black);
+//   margin-top: 0.6vw;
+//   letter-spacing: -.8px;
+// }
 
-.card-tag {
-  font-size: 0.95vw;
-  font-family: "mon-bold";
-  color: #4c8df5;
-  margin-top: -0.4vw;
-}
+// .card-tag {
+//   font-size: 0.95vw;
+//   font-family: "mon-bold";
+//   color: #4c8df5;
+//   margin-top: -0.4vw;
+// }
 
-.card-skill {
-  font-size: 0.93vw;
-  font-family: 'mon-med';
-  color: var(--black);
-  margin-top: 1.8vw;
-}
+// .card-skill {
+//   font-size: 0.93vw;
+//   font-family: 'mon-med';
+//   color: var(--black);
+//   margin-top: 1.8vw;
+// }
 
-.card-amount {
-  font-size: 1vw;
-  font-family: 'mon-reg';
-  color: var(--black);
-}
+// .card-amount {
+//   font-size: 1vw;
+//   font-family: 'mon-reg';
+//   color: var(--black);
+// }
 
-.card-amount span {
-  font-family: "mon-bold";
-  font-size: 1.07vw;
-}
+// .card-amount span {
+//   font-family: "mon-bold";
+//   font-size: 1.07vw;
+// }
 
 .card-button {
   font-size: 0.91vw;
@@ -296,6 +303,7 @@ h2 {
 .see-more {
   width: 100%;
   margin: auto;
+  margin-top: 30px;
   padding-bottom: 3vw;
 }
 
@@ -434,7 +442,7 @@ h2 {
 
 .vector-bg {
   padding: 3vw 0 3.3vw;
-  background-color: #415499;
+  background-color: #1eabfc;
   background-image: url('../../../assets/images/vector-bg.png');
   background-repeat: no-repeat;
   background-position: 47vw -23vw;
@@ -757,7 +765,7 @@ h2 {
 
 
 .modal-body.checkoutModal {
-  background-color: #c78b97;
+  background-color: #1eabfc;
   color: aliceblue;
   padding: 20px;
 }
@@ -915,3 +923,85 @@ h2 {
   display: inline-block;
 }
 
+
+
+
+.single-job-box {
+  margin-bottom: 25px;
+  border-radius: 15px;
+  padding: 25px 25px 0;
+  background-color: var(--whiteColor);
+  border: 1px solid var(--borderColor);
+
+  .company-logo {
+      width: 7.5vw;
+      height: 7.5vw;
+      position: relative;
+      border-radius: 50%;
+      text-align: center;
+      background-color: #f4f7fb;
+
+      img {
+          left: 0;
+          right: 0;
+          top: 50%;
+          width: 3.5vw;
+          position: absolute;
+          transform: translateY(-50%);
+          margin-left: auto;
+          margin-right: auto;
+      }
+  }
+  .content {
+      margin-left: 1.8vw;
+
+      h3 {
+          font-size: 1.32vw;
+          margin-bottom: 0.3vw;
+          font-family: 'mon-bold';
+      }
+      .location {
+          font-size: 1.1vw;
+          font-family: 'mon-reg';
+      }
+      .job-type {
+          color: #4086f6;
+          font-size: 1vw;
+          font-family: 'mon-reg';
+      }
+  }
+  .info {
+      margin-top: 1.8vw;
+      padding: 1vw 2.3vw;
+      border-top: 0.1vw solid var(--borderColor);
+      margin-left: -1vw;
+      margin-right: -1vw;
+      .salary {
+          span {
+              font-size: 0.95vw;
+              color: var(--headingColor);
+
+              &:nth-child(1) {
+                  font-family: 'mon-semi';
+                  margin-right: 0.2vw;
+              }
+              &:nth-child(2) {
+                  font-family: 'mon-reg';
+                  color: #4086f6;
+              }
+          }
+      }
+      .deadline {
+          span {
+              font-size: 0.95vw;
+              font-family: 'mon-semi';
+              color: #d8342b;
+
+              &:nth-child(2) {
+                  font-family: 'mon-reg';
+                  color: #4086f6;
+              }
+          }
+      }
+  }
+}

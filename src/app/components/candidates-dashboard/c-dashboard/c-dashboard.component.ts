@@ -66,7 +66,7 @@ export class CDashboardComponent {
                 enabled: false
             },
             colors: [
-                "#3a4e90"
+                "#1eabfc"
             ],
             stroke: {
                 curve: "straight"
@@ -136,15 +136,18 @@ export class CDashboardComponent {
         try {
           const res: any = await this.http.get('auth/me', true).toPromise();
           this.user = res?.user;
-    
-          // Extract applied jobs from the response
-          if (this.user && this.user.job_apply) {
-            this.appliedJobs.push(this.user.job_apply.job); // Assuming job_apply contains only one job
+      
+          if (this.user && Array.isArray(this.user.job_apply)) {
+            this.appliedJobs = this.user.job_apply.map((application: any) => application.job);
+          } else {
+            this.appliedJobs = []; // Fallback to an empty array
           }
         } catch (error) {
-          console.error('Error fetching users:', error);
+          console.error('Error fetching user:', error);
+          this.appliedJobs = []; // Handle error gracefully
         }
       }
+      
 
       async openJobDetail(id: string) {
         this.router.navigate(['/job-details'], {

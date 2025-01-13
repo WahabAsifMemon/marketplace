@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
   selectedFileName: string | null = null;
   video: any;
   resume: any;
+  attachment: any;
   jobId: any;
   bookmarkedJobs = new Set<number>();
   public modalReference: any;
@@ -24,6 +25,8 @@ export class HomeComponent implements OnInit {
   selectedResumeFile: File | null = null;
 
   isAgreed: boolean = false;
+  isLoading = false;
+
 
 
 
@@ -39,11 +42,11 @@ export class HomeComponent implements OnInit {
   job_apply: any;
 
   tabs = [
-    { label: 'Recent Jobs', type: '' }, // No filter for Recent Jobs
+    { label: 'Active Jobs', type: '' }, // No filter for Recent Jobs
     // { label: 'Featured Jobs', type: 'Featured' },
-    { label: 'Freelancer', type: 'Freelancer' },
+    // { label: 'Freelancer', type: 'Freelancer' },
     { label: 'Part Time', type: 'Part Time' },
-    { label: 'Full Time', type: 'Full Time' },
+    // { label: 'Full Time', type: 'Full Time' },
   ];
 
   // accordionItems = [
@@ -140,6 +143,8 @@ export class HomeComponent implements OnInit {
       this.job_apply = res?.user?.job_apply || [];
       this.video = res?.user?.candidate_videos[0]?.video_url;
       this.resume = res?.user?.resume[0]?.resume;
+      this.attachment = res?.user?.attachment[0]?.resume;
+
 
       console.log('dds', this.video);
     } catch (error) {
@@ -175,6 +180,12 @@ export class HomeComponent implements OnInit {
     return !!localStorage.getItem('token');
 
   }
+
+  async openJobDetail(id: string) {
+    this.router.navigate(['/job-details'], {
+        queryParams: { id: id },
+    });
+}
 
 
   
@@ -214,24 +225,23 @@ export class HomeComponent implements OnInit {
 
   applyJob() {
     if (this.applyForm.valid) {
-      // Create a new object that includes jobId and other form values
       const formData = {
-        jobId: this.applyForm.value.jobId, // Assuming jobId is a field in your form
-        // Add other fields from the form as needed, e.g.:
-        // name: this.applyForm.value.name,
-        // email: this.applyForm.value.email,
-        // ...other form fields
+        jobId: this.applyForm.value.jobId,
       };
+  
+      // Set loading state to true
+      this.isLoading = true;
   
       this.http.post('jobs/apply_job', formData, true).subscribe(
         (res: any) => {
           console.log('Job application successful');
           this.proceed();
-          window.location.reload();
-
+          this.isLoading = false; // Reset loading state
+          window.location.reload(); // Reload the page
         },
         (error: any) => {
           console.error('Error applying for job:', error);
+          this.isLoading = false; // Reset loading state on error
         }
       );
     } else {

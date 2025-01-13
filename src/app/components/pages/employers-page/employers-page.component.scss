@@ -46,7 +46,7 @@
             font-family: 'mon-reg';
 
             &:hover {
-                border-color: #3a4e90;
+                border-color: #1eabfc;
                 background-color: transparent;
             }
         }
@@ -107,7 +107,7 @@
             font-family: 'mon-bold';
             border-radius: 2vw;
             padding: .5vw 1.3vw 0.45vw;
-            color: #3a4e90;
+            color: #1eabfc;
             background-color: #f4f7fb;
         }
     }
@@ -116,7 +116,7 @@
         .jobs-open {
             a {
                 color: var(--whiteColor);
-                background-color: #3a4e90;
+                background-color: #1eabfc;
             }
         }
     }

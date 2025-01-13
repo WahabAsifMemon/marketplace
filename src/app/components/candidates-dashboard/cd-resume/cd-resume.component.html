@@ -248,10 +248,10 @@
                   <select id="experience" class="form-select shadow-none" formControlName="Experience">
                     <option selected>Select</option>
                     <option value="Fresher">Fresher</option>
-                    <option value="1 year">1 year</option>
-                    <option value="2 years">2 years</option>
                     <option value="3 years">3 years</option>
                     <option value="4 years">4 years</option>
+                    <option value="5 years">5 years</option>
+                    <option value="10 years">10 years</option>
                 </select>
                   <div *ngIf="(personalDetailsForm.get('Experience')?.invalid || personalDetailsForm.get('Experience')?.touched) && saveDetails" class="text-danger">
                       <small *ngIf="personalDetailsForm.get('Experience')?.errors?.['required']">Experience is required.</small>
@@ -371,6 +371,31 @@
     </div>
   </div>
 
+</div>
+
+
+
+<div class="jove-card">
+  <h3 class="title">More Attachment (Optional)</h3>
+  <form [formGroup]="attachmentForm" (ngSubmit)="onSubmitAttachment()">
+    <div class="form-group">
+      <label for="attachmentFile">Upload More Attachment:</label>
+      <input type="file" id="file" formControlName="file" />
+    </div>
+    <button type="submit" class="default-btn">Save</button>
+  </form>
+
+  <div *ngIf="attachment" class="pdf-preview">
+    <h3 class="title">Uploaded Attachment</h3>
+
+    <div class="download-cv">
+      <a [href]="attachment" target="_blank" class="d-block position-relative" download>
+        <span class="d-block">{{ 'attachment' }}</span>
+        Attachment
+        <i class="ri-file-download-line"></i>
+      </a>
+    </div>
+  </div>
 </div>
 
 

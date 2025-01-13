@@ -22,6 +22,7 @@
         "@ckeditor/ckeditor5-build-classic": "^43.1.0",
         "@fortawesome/fontawesome-free": "^6.6.0",
         "@ng-bootstrap/ng-bootstrap": "^17.0.1",
+        "@popperjs/core": "^2.11.8",
         "@stripe/stripe-js": "^4.4.0",
         "aos": "^2.3.4",
         "apexcharts": "^3.44.0",

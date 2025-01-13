@@ -61,7 +61,7 @@
             font-family: 'mon-bold';
             border-radius: 2vw;
             padding: .5vw 1.3vw 0.45vw;
-            color: #3a4e90;
+            color: #1eabfc;
             background-color: #f4f7fb;
         }
 
@@ -75,7 +75,7 @@
             transition: var(--transition);
 
             &:hover {
-                background-color: #3a4e90;
+                background-color: #1eabfc;
                 color: var(--whiteColor);
             }
         }
@@ -85,7 +85,7 @@
         .jobs-open {
             a {
                 color: var(--whiteColor);
-                background-color: #3a4e90;
+                background-color: #1eabfc;
             }
         }
     }

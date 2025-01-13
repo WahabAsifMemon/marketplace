@@ -41,7 +41,52 @@
                 </div>
 
                 <!-- Job List -->
-                <div class="row justify-content-center" *ngIf="filteredJobs.length > 0">
+                <div class="row" *ngIf="filteredJobs.length > 0">
+
+                    <div *ngFor="let job of filteredJobs" class="col-lg-12">
+                        <div class="single-job-box">
+                            <div class="d-sm-flex align-items-center justify-content-between">
+                                <div class="d-sm-flex align-items-center">
+                                    <div class="company-logo">
+                                        <img [src]="job?.user?.employer_details?.main_logo || 'default-logo.png'"  alt="company-image">
+                                    </div>
+                                    <div class="content">
+                                        <h3>
+                                            <a (click)="openJobDetail(job.id)">
+                                                {{ job.title }}
+                                            </a>
+                                        </h3>
+                                        <span class="location d-block">
+                                            {{ job?.user?.employer_details?.company_name }} in {{ job.city }}
+                                        </span>
+                                        <span class="job-type d-block">
+                                            {{ job.jobType }}
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="apply-btn">
+                                    <a (click)="openJobDetail(job.id)" class="default-btn">
+                                        Apply
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="info d-sm-flex align-items-center justify-content-between">
+                                <span class="salary d-block">
+                                    <span>Salary:</span>
+                                    <span>{{ job.salary }}</span>
+                                    /monthly
+                                </span>
+                                <span class="deadline d-block">
+                                    <span>Deadline:</span>
+                                    {{job?.deadline  | date}}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- <div class="row justify-content-center" *ngIf="filteredJobs.length > 0">
 
                     <div *ngFor="let job of filteredJobs" class="col-lg-6 col-md-6">
 
@@ -90,7 +135,7 @@
                             <span class="tag">Featured</span>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Pagination -->
 <!-- Pagination -->

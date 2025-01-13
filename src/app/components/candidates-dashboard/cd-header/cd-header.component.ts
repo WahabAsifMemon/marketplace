@@ -45,6 +45,11 @@ export class CdHeaderComponent {
          this.currentInnerTab = tab;
      }
 
+     get accessTokenExists(): boolean {
+        return !!localStorage.getItem('token');
+      }
+
+      
      logout() {
       localStorage.clear();
         window.location.reload();

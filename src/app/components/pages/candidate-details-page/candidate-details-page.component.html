@@ -43,6 +43,30 @@
                             Your browser does not support the video tag.
                         </video>
                     </div>
+
+                    <h3>
+                        Passion and future goals
+                    </h3>
+                    <p>
+                      {{ candidateDetail?.dataValues?.passion_and_future_goals }}
+                    </p>
+
+
+                    <h3>
+                        Background and expertise
+                    </h3>
+                    <ul class="ps-0 list-unstyled">
+                      <li *ngFor="let experience of candidateDetail?.candidate_experience; let i = index" class="position-relative">
+                        <div class="number">{{ i + 1 }}</div>
+                        <h4>{{ experience.position }}</h4>
+                        <span class="d-block designation">
+                            <span>{{ experience.company_name }}</span> - ({{ experience.start_year }} - {{ experience.end_year }})
+                        </span>
+                        <p>{{ experience.description }}</p>
+                    </li>
+                    </ul>
+
+
                     <h3>
                         Education
                     </h3>
@@ -57,25 +81,9 @@
                         </li>
 
                     </ul>
-                    <h3>
-                        Background and expertise
-                    </h3>
-                    <ul class="ps-0 list-unstyled">
-                      <li *ngFor="let experience of candidateDetail?.candidate_experience; let i = index" class="position-relative">
-                        <div class="number">{{ i + 1 }}</div>
-                        <h4>{{ experience.position }}</h4>
-                        <span class="d-block designation">
-                            <span>{{ experience.company_name }}</span> - ({{ experience.start_year }} - {{ experience.end_year }})
-                        </span>
-                        <p>{{ experience.description }}</p>
-                    </li>
-                    </ul>
-                    <h3>
-                        Passion and future goals
-                    </h3>
-                    <p>
-                      {{ candidateDetail?.dataValues?.passion_and_future_goals }}
-                    </p>
+                    
+ 
+                   
 
                 </div>
             </div>

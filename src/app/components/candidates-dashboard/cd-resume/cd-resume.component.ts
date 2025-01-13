@@ -14,8 +14,11 @@ export class CdResumeComponent implements OnInit {
   personalDetailsForm!: FormGroup;
   videoUploadForm!: FormGroup;
   cvForm: FormGroup;
+  attachmentForm:  FormGroup;
   candidate_video: any;
   pdf: any;
+  attachment: any;
+
   saveDetails: boolean = false;
   saveVideo: boolean = false;
   public id: any;
@@ -57,6 +60,10 @@ export class CdResumeComponent implements OnInit {
 
     this.cvForm = this.fb.group({
       cv: [null, [Validators.required]]
+    });
+
+    this.attachmentForm = this.fb.group({
+      file: [null, [Validators.required]]
     });
   }
 
@@ -209,6 +216,16 @@ export class CdResumeComponent implements OnInit {
     }
 
 
+    try {
+      const res: any = await this.http.get('file/get_uploaded_attachment', true).toPromise();
+      this.attachment = res?.attachment?.[0]?.url;
+      console.log('fsdfd', this.attachment)
+    }
+    catch (error) {
+      console.error('Error fetching user profile:', error);
+    }
+
+    
 
   }
 
@@ -302,6 +319,28 @@ export class CdResumeComponent implements OnInit {
       console.error('No file selected.');
     }
   }
+
+
+  onSubmitAttachment(): void {
+    const fileInput = document.getElementById('file') as HTMLInputElement;
+    const files = fileInput?.files;
+    
+    if (files && files.length > 0) {      
+      this.helper.attachUploadHttp(files)
+        .then((result: any) => {
+          this.attachmentForm.patchValue({
+            file: result.data.url, // Set the file URL or the value in the form
+          });
+          console.log('File uploaded successfully:', this.attachmentForm.value);
+        })
+        .catch((error) => {
+          console.error('Error during file upload:', error);
+        });
+    } else {
+      console.error('No file selected.');
+    }
+  }
+  
 
 
 

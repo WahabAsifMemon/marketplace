@@ -56,89 +56,37 @@
                     </ul>
                 </div>
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+                    <li class="nav-item" >
+                        <a routerLink="/" class="nav-link" routerLinkActive="active"
+                            [routerLinkActiveOptions]="{exact: true}">
                             Home
                         </a>
-                        <ul class="dropdown-menu">
-                            <li class="nav-item">
-                                <a routerLink="/" class="nav-link" routerLinkActive="active"
-                                    [routerLinkActiveOptions]="{exact: true}">
-                                    Home
-                                </a>
-                            </li>
-                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+                
+
+                    <li class="nav-item" >
+                        <a routerLink="/jobs-grid" class="nav-link" routerLinkActive="active"
+                            [routerLinkActiveOptions]="{exact: true}">
                             Jobs
                         </a>
-                        <ul class="dropdown-menu">
-                            <li class="nav-item">
-                                <a routerLink="/jobs-grid" class="nav-link" routerLinkActive="active"
-                                    [routerLinkActiveOptions]="{exact: true}">
-                                    Jobs
-                                </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a routerLink="/job-details" class="nav-link" routerLinkActive="active"
-                                    [routerLinkActiveOptions]="{exact: true}">
-                                    Job Details
-                                </a>
-                            </li>
-                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+
+
+                    <li class="nav-item" >
+                        <a routerLink="/employers" class="nav-link" routerLinkActive="active"
+                            [routerLinkActiveOptions]="{exact: true}">
                             Employers
                         </a>
-                        <ul class="dropdown-menu">
-                            <li class="nav-item">
-                                <a routerLink="/employers" class="nav-link" routerLinkActive="active"
-                                    [routerLinkActiveOptions]="{exact: true}">
-                                    Employers
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a routerLink="/employer-details" class="nav-link" routerLinkActive="active"
-                                    [routerLinkActiveOptions]="{exact: true}">
-                                    Employer Details
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a routerLink="/dashboard" class="nav-link" routerLinkActive="active"
-                                    [routerLinkActiveOptions]="{exact: true}">
-                                    Employers Dashboard
-                                </a>
-                            </li>
-                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+
+
+                    <li class="nav-item" >
+                        <a routerLink="/candidates" class="nav-link" routerLinkActive="active"
+                            [routerLinkActiveOptions]="{exact: true}">
                             Candidates
                         </a>
-                        <ul class="dropdown-menu">
-                            <li class="nav-item">
-                                <a routerLink="/candidates" class="nav-link" routerLinkActive="active"
-                                    [routerLinkActiveOptions]="{exact: true}">
-                                    Candidates
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a routerLink="/candidate-details" class="nav-link" routerLinkActive="active"
-                                    [routerLinkActiveOptions]="{exact: true}">
-                                    Candidate Details
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a routerLink="/candidates-dashboard" class="nav-link" routerLinkActive="active"
-                                    [routerLinkActiveOptions]="{exact: true}">
-                                    Candidates Dashboard
-                                </a>
-                            </li>
-                        </ul>
                     </li>
+                  
                     <li class="nav-item">
                         <a href="javascript:void(0)" class="dropdown-toggle nav-link">
                             Pages
@@ -168,19 +116,17 @@
                                     Contact Us
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a routerLink="/pricing" class="nav-link" routerLinkActive="active"
-                                    [routerLinkActiveOptions]="{exact: true}">
-                                    Pricing
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a routerLink="/not-found" class="nav-link" routerLinkActive="active"
-                                    [routerLinkActiveOptions]="{exact: true}">
-                                    404 Error Page
-                                </a>
-                            </li>
+                          
+                           
+
                         </ul>
+                    </li>
+
+                    <li class="nav-item" >
+                        <a routerLink="/community" *ngIf="isLoggedIn" class="nav-link" routerLinkActive="active"
+                            [routerLinkActiveOptions]="{exact: true}">
+                           Community
+                        </a>
                     </li>
 
                 </ul>
@@ -218,18 +164,18 @@
                       </div>
 
 
-                    <div class="option-item"  *ngIf="userRole === 'employer' ">
+                    <div class="option-item"  *ngIf="userRole === 'employer' && accessTokenExists">
                         <a routerLink="/dashboard/post-a-new-job" class="default-btn">
                             Post A Job
                         </a>
                     </div>
 
-                    <div class="option-item"  *ngIf="userRole === 'candidate'"
-                    >
-                      <a routerLink="/dashboard/post-a-new-job" class="default-btn">
-                          Logout
-                      </a>
-                  </div>
+                    <div class="option-item" *ngIf="userRole === 'candidate' && accessTokenExists">
+                        <a (click)="logout()"style="cursor: pointer;" class="default-btn">
+                            Logout
+                        </a>
+                    </div>
+                    
 
                 </div>
             </div>
