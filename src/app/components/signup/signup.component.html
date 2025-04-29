@@ -1,0 +1,133 @@
+
+<div class="container" style="overflow-y: auto;width:100%; height: 100%;  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  ">
+  <div class="left">
+    <div class="logo">
+      <img src="https://peachydigitals.com/wp-content/uploads/Logo-3.png" alt="">
+    </div>
+    <h1>Welcome to Job Towners!</h1>
+    <p>Thank you for signing up for early access to Job Towners, a caring job board designed to connect businesses with motivated students.</p>
+
+    <!-- Signup Form -->
+    <form [formGroup]="EmployerSignupForm" (ngSubmit)="onSubmit()">
+      <div class="full">
+        <div class="half">
+          <label for="first_name" class="label-css">First Name *</label>
+          <input class="form-input" type="text" id="first_name" formControlName="first_name" placeholder="Enter your name" />
+          <div *ngIf="EmployerSignupForm.get('first_name')?.invalid && EmployerSignupForm.get('first_name')?.touched" class="error">
+            First Name is required.
+          </div>
+        </div>
+
+        <div class="half">
+          <label for="email" class="label-css">Email Address *</label>
+          <input class="form-input" type="email" id="email" formControlName="email" placeholder="Enter your email" />
+          <div *ngIf="EmployerSignupForm.get('email')?.invalid && EmployerSignupForm.get('email')?.touched" class="error">
+            A valid email is required.
+          </div>
+        </div>
+      </div>
+
+
+      <div class="full">
+        <div class="half">
+          <label for="last_name" class="label-css">Last Name *</label>
+          <input class="form-input" type="text" id="last_name" formControlName="last_name" placeholder="Enter your last name" />
+          <div *ngIf="EmployerSignupForm.get('last_name')?.invalid && EmployerSignupForm.get('last_name')?.touched" class="error">
+            Last Name is required.
+          </div>
+        </div>
+
+        <div class="half">
+          <label for="username" class="label-css">Username *</label>
+          <input class="form-input" type="text" id="username" formControlName="username" placeholder="Enter your username" />
+          <div *ngIf="EmployerSignupForm.get('username')?.invalid && EmployerSignupForm.get('username')?.touched" class="error">
+            User Name is required.
+          </div>
+        </div>
+      </div>
+
+      <!-- Role Selection -->
+      <div class="half flex">
+        <label class="label-css">I am a:</label>
+        <div class="radio-group">
+          <label>
+            <input class="radio-text" type="radio" formControlName="role" value="candidate" (change)="onRoleChange()" />
+            Candidate (Student)
+          </label>
+          <label>
+            <input class="radio-text" type="radio" formControlName="role" value="employer" (change)="onRoleChange()" />
+            Employer (Business)
+          </label>
+        </div>
+        <div *ngIf="EmployerSignupForm.get('role')?.invalid && EmployerSignupForm.get('role')?.touched" class="error">
+          Role is required.
+        </div>
+      </div>
+
+      <!-- Work Authorization (for Students) -->
+      <div *ngIf="EmployerSignupForm.get('role')?.value === 'Candidate'" class="full-lenght half">
+        <label class="label-css">Are you legally authorized to work in Canada?</label>
+        <select class="select-opt" formControlName="workAuthorization">
+          <option value="" disabled>Select</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+
+      <!-- Phone Number (Optional) -->
+      <div class="full-lenght half">
+        <label for="phone_number" class="label-css">Phone Number *</label>
+        <input class="form-input"  maxlength="11" type="tel" id="phone_number" formControlName="phone_number" placeholder="Enter your phone number" />
+        <div *ngIf="EmployerSignupForm.get('phone_number')?.invalid && EmployerSignupForm.get('phone_number')?.touched" class="error">
+          Phone Number is required.
+        </div>
+      </div>
+
+
+      <div class="full-lenght half">
+        <label for="phone" class="label-css">Password *</label>
+        <input class="form-input" type="password" id="password" formControlName="password" placeholder="***********" />
+        <div *ngIf="EmployerSignupForm.get('password')?.invalid && EmployerSignupForm.get('password')?.touched" class="error">
+          Password is required.
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <button class="submit-btn" type="submit" [disabled]="EmployerSignupForm.invalid">Sign Up</button>
+    </form>
+
+    <!-- Note -->
+    <p class="note">
+      Stay connected with us! Add us to your safe sender list to receive updates, exclusive promotions, and launch announcements.
+    </p>
+  </div>
+
+  <div class="right">
+    <div class="main-round">
+      <div class="laptop">
+        <img src="https://peachydigitals.com/wp-content/uploads/laptop.png" alt="">
+      </div>
+      <div class="round-1"></div>
+      <div class="round-2"></div>
+      <div class="round-3"></div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Success Modal -->
+<div class="modal-backdrop" *ngIf="isOpen">
+  <div class="modal">
+    <img src="https://peachydigitals.com/wp-content/uploads/2222-01.png" alt="">
+    <div class="modal-header">
+      <h2>{{ title }}</h2>
+    </div>
+    <div class="modal-body">
+      Thank you for signing up for early access to Job Towners! We’ll keep you updated with exclusive promotions and launch details.
+    </div>
+    <button class="close-btn" (click)="onClose()">✖</button>
+  </div>
+</div>
